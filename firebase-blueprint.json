@@ -1,0 +1,56 @@
+{
+  "entities": {
+    "Analytics": {
+      "title": "Analytics",
+      "type": "object",
+      "properties": {
+        "visits": {
+          "type": "number",
+          "description": "Total count of visits"
+        },
+        "uniqueVisitors": {
+          "type": "number",
+          "description": "Count of unique visitors"
+        },
+        "lastVisitedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["visits"]
+    },
+    "VisitLog": {
+      "title": "VisitLog",
+      "type": "object",
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "visitorId": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "userAgent": {
+          "type": "string"
+        },
+        "screenResolution": {
+          "type": "string"
+        }
+      },
+      "required": ["timestamp", "visitorId"]
+    }
+  },
+  "firestore": {
+    "/analytics/{docId}": {
+      "schema": "Analytics",
+      "description": "Global analytics and counter data"
+    },
+    "/analytics/{docId}/logs/{logId}": {
+      "schema": "VisitLog",
+      "description": "Individual visit logs with timestamp and device details"
+    }
+  }
+}
