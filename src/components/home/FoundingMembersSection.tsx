@@ -126,15 +126,15 @@ export const FOUNDING_MENTORS: MentorProfile[] = [
     fellowships: ['PMRF (Govt. of India)']
   },
   {
-    id: 'dr-dagur',
-    name: 'Dr. Dagur',
+    id: 'hanuman-singh-dagur',
+    name: 'Dr. Hanuman Singh Dagur',
     degrees: 'B.Sc., M.Sc., PhD (IIT Hyderabad)',
     role: 'Co-Founder & Lead Scientific Advisor',
     institute: 'IIT Hyderabad (PhD) • Research Associate (IIT Hyderabad)',
     image: drSubhashisMImg,
     badge: 'PMRF Fellow (Govt. of India) • IIT Hyderabad Scholar',
     shortBio: 'Medicinal chemist and spectroscopic analyst specializing in rational small-molecule design, high-field 2D NMR interpretation, and virtual library screening.',
-    fullBio: `Dr. Dagur holds a PhD in Chemistry from IIT Hyderabad, focusing on synthetic organic chemistry, natural product analogues, and chemoinformatics. He leads spectral validation (1D/2D NMR, HRMS) and rational pharmacophore design across Researcho drug discovery initiatives.`,
+    fullBio: `Dr. Hanuman Singh Dagur holds a PhD in Chemistry from IIT Hyderabad, focusing on synthetic organic chemistry, natural product analogues, and chemoinformatics. He leads spectral validation (1D/2D NMR, HRMS) and rational pharmacophore design across Researcho drug discovery initiatives.`,
     highlights: [
       'PhD in Chemistry from IIT Hyderabad',
       'Expert in High-Resolution 2D NMR (COSY, HSQC, HMBC) Elucidation',
