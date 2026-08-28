@@ -187,12 +187,12 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                   ✉️ Send Email to contact@researcho-by-iitians.in
                 </a>
                 <a
-                  href={`https://wa.me/919063751838?text=Hello%20Dr.%20Ghosh,%20I%20just%20submitted%20a%20consultation%20request%20for%20${encodeURIComponent(formData.researchArea)}.%20Name:%20${encodeURIComponent(formData.name)}`}
+                  href="https://chat.whatsapp.com/Chz0dgk9tTIJG6rcit8hnP"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center py-2 px-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-lg transition-colors shadow-xs"
+                  className="block w-full text-center py-2 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg transition-colors shadow-xs"
                 >
-                  💬 Or Send via WhatsApp (+91 90637 51838)
+                  👥 Join our WhatsApp Group / Community
                 </a>
               </div>
 

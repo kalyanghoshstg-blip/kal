@@ -206,12 +206,12 @@ export const ContactView: React.FC = () => {
                     ✉️ Send Email to contact@researcho-by-iitians.in
                   </a>
                   <a
-                    href={`https://wa.me/919063751838?text=Hello%20Dr.%20Ghosh,%20I%20sent%20a%20contact%20inquiry%20regarding%20${encodeURIComponent(formData.researchDomain)}.%20Name:%20${encodeURIComponent(formData.name)}`}
+                    href="https://chat.whatsapp.com/Chz0dgk9tTIJG6rcit8hnP"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-lg text-xs transition-colors shadow-xs text-center"
+                    className="block w-full py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg text-xs transition-colors shadow-xs text-center"
                   >
-                    💬 Or WhatsApp +91 90637 51838
+                    👥 Join our WhatsApp Group / Community
                   </a>
                 </div>
                 <div className="pt-2">
