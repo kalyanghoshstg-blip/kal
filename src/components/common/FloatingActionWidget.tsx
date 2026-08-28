@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, MessageSquare, PhoneCall } from 'lucide-react';
+import { Mail, PhoneCall } from 'lucide-react';
 import { PageView } from '../../types';
 
 interface FloatingActionWidgetProps {

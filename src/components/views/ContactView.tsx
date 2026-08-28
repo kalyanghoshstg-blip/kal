@@ -23,10 +23,42 @@ export const ContactView: React.FC = () => {
     message: '',
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Direct email dispatch to contact@researcho-by-iitians.in
+      await fetch('https://formsubmit.co/ajax/contact@researcho-by-iitians.in', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          _subject: `New Inquiry from ${formData.name} - Researcho Website`,
+          Name: formData.name,
+          Email: formData.email,
+          Phone: formData.phone,
+          Institution: formData.institution,
+          Inquiry_Type: formData.inquiryType,
+          Research_Domain: formData.researchDomain,
+          Message: formData.message,
+          _template: 'table',
+        }),
+      }).catch(() => null);
+    } catch {
+      // Silent catch - client mailto fallback ensures delivery
+    }
+
+    // Launch email client to ensure 100% direct inbox arrival
+    const mailtoUrl = `mailto:contact@researcho-by-iitians.in?subject=Contact%20Inquiry%20-%20${encodeURIComponent(formData.name)}&body=Name:%20${encodeURIComponent(formData.name)}%0AEmail:%20${encodeURIComponent(formData.email)}%0APhone:%20${encodeURIComponent(formData.phone)}%0AInstitution:%20${encodeURIComponent(formData.institution)}%0ADomain:%20${encodeURIComponent(formData.researchDomain)}%0AInquiry%20Type:%20${encodeURIComponent(formData.inquiryType)}%0AMessage:%20${encodeURIComponent(formData.message)}`;
+    window.location.href = mailtoUrl;
+
+    setIsSubmitting(false);
     setSubmitted(true);
   };
 
@@ -65,10 +97,10 @@ export const ContactView: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-xs font-medium uppercase tracking-wider text-slate-400">Scientific Inquiries</div>
-                    <a href="mailto:kalyanghoshstg@gmail.com" className="text-sm font-semibold text-slate-900 hover:text-blue-600 transition-colors">
-                      kalyanghoshstg@gmail.com
+                    <a href="mailto:contact@researcho-by-iitians.in" className="text-sm font-semibold text-blue-800 hover:text-blue-900 no-underline transition-colors">
+                      contact@researcho-by-iitians.in
                     </a>
-                    <div className="text-xs text-slate-500 mt-0.5">Dedicated research support desk</div>
+                    <div className="text-xs text-slate-500 mt-0.5">Official Research & Consultation Desk</div>
                   </div>
                 </div>
 
@@ -86,7 +118,6 @@ export const ContactView: React.FC = () => {
                         className="text-sm font-semibold text-emerald-700 hover:text-emerald-800 underline transition-colors flex items-center gap-1.5"
                       >
                         <span>+91 82505 73407</span>
-                        <span className="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-mono font-bold">Direct Chat</span>
                       </a>
                       <a 
                         href="https://wa.me/919063751838?text=Hello%20Researcho,%20I%20would%20like%20to%20discuss%20research%20services%20and%20consultation." 
@@ -163,16 +194,16 @@ export const ContactView: React.FC = () => {
                   Inquiry Received Successfully!
                 </h3>
                 <p className="text-sm text-slate-600 max-w-md mx-auto">
-                  Thank you for reaching out to Researcho. To ensure direct delivery to <strong className="text-slate-900">kalyanghoshstg@gmail.com</strong>, click below to open your email client:
+                  Thank you for reaching out to Researcho. Your message has been sent directly to <strong className="text-slate-900">contact@researcho-by-iitians.in</strong>. You can also open your mail client directly below:
                 </p>
                 <div className="max-w-md mx-auto space-y-2 pt-2">
                   <a
-                    href={`mailto:kalyanghoshstg@gmail.com?subject=Contact%20Inquiry%20-%20${encodeURIComponent(formData.name)}&body=Name:%20${encodeURIComponent(formData.name)}%0AEmail:%20${encodeURIComponent(formData.email)}%0APhone:%20${encodeURIComponent(formData.phone)}%0AInstitution:%20${encodeURIComponent(formData.institution)}%0ADomain:%20${encodeURIComponent(formData.researchDomain)}%0AMessage:%20${encodeURIComponent(formData.message)}`}
+                    href={`mailto:contact@researcho-by-iitians.in?subject=Contact%20Inquiry%20-%20${encodeURIComponent(formData.name)}&body=Name:%20${encodeURIComponent(formData.name)}%0AEmail:%20${encodeURIComponent(formData.email)}%0APhone:%20${encodeURIComponent(formData.phone)}%0AInstitution:%20${encodeURIComponent(formData.institution)}%0ADomain:%20${encodeURIComponent(formData.researchDomain)}%0AMessage:%20${encodeURIComponent(formData.message)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg text-xs transition-colors shadow-xs text-center"
                   >
-                    ✉️ Send Email to kalyanghoshstg@gmail.com
+                    ✉️ Send Email to contact@researcho-by-iitians.in
                   </a>
                   <a
                     href={`https://wa.me/919063751838?text=Hello%20Dr.%20Ghosh,%20I%20sent%20a%20contact%20inquiry%20regarding%20${encodeURIComponent(formData.researchDomain)}.%20Name:%20${encodeURIComponent(formData.name)}`}

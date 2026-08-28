@@ -65,7 +65,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   };
 
   return (
-    <div className={`inline-flex items-center select-none ${className}`}>
+    <div className={`flex items-center select-none ${className}`}>
       <img
         src={transparentSrc}
         alt="Researcho by IITians - One-Stop Research Solutions"
@@ -75,3 +75,4 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     </div>
   );
 };
+

@@ -256,7 +256,7 @@ export const Footer: React.FC<FooterProps> = ({
             </ul>
 
             {/* Total Website Visitor Counter Badge */}
-            <div className="pt-1 w-[208.5px]">
+            <div className="pt-4 w-[208.5px]">
               <VisitorCounter variant="dark" className="w-full" />
             </div>
           </div>
@@ -349,15 +349,15 @@ export const Footer: React.FC<FooterProps> = ({
                   </div>
 
                   <a 
-                    href="mailto:kalyanghoshstg@gmail.com" 
+                    href="mailto:contact@researcho-by-iitians.in" 
                     className="flex items-center gap-2.5 p-2 rounded-lg bg-slate-950/70 border border-slate-800/80 text-slate-200 hover:text-white hover:border-blue-500/60 hover:bg-blue-950/30 transition-all group cursor-pointer"
                   >
                     <div className="w-6 h-6 rounded-md bg-blue-600/20 text-blue-400 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                       <Mail className="w-3.5 h-3.5" />
                     </div>
                     <div className="min-w-0">
-                      <div className="text-[10px] text-slate-400 leading-tight">Email</div>
-                      <div className="font-semibold text-slate-100 text-xs truncate">kalyanghoshstg@gmail.com</div>
+                      <div className="text-[10px] text-slate-400 leading-tight">Official Email</div>
+                      <div className="font-semibold text-slate-100 text-xs truncate">contact@researcho-by-iitians.in</div>
                     </div>
                   </a>
                 </div>

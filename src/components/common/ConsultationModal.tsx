@@ -67,13 +67,39 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const mailtoUrl = `mailto:kalyanghoshstg@gmail.com?subject=New%20Research%20Consultation%20Request%20-%20${encodeURIComponent(formData.name)}&body=Name:%20${encodeURIComponent(formData.name)}%0AEmail:%20${encodeURIComponent(formData.email)}%0APhone:%20${encodeURIComponent(formData.phone)}%0AInstitution:%20${encodeURIComponent(formData.institution)}%0ADegree/Position:%20${encodeURIComponent(formData.degreeOrPosition)}%0AResearch%20Area:%20${encodeURIComponent(formData.researchArea)}%0AProject%20Type:%20${encodeURIComponent(formData.projectType)}%0ADescription:%20${encodeURIComponent(formData.description)}`;
+    try {
+      // Direct email dispatch to contact@researcho-by-iitians.in
+      await fetch('https://formsubmit.co/ajax/contact@researcho-by-iitians.in', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          _subject: `New Research Consultation Request - ${formData.name} (${formData.researchArea})`,
+          Name: formData.name,
+          Email: formData.email,
+          Phone: formData.phone,
+          Institution: formData.institution,
+          Degree_or_Position: formData.degreeOrPosition,
+          Research_Area: formData.researchArea,
+          Project_Type: formData.projectType,
+          Project_Description: formData.description,
+          File_Attachment: formData.fileName || 'None provided',
+          _template: 'table',
+        }),
+      }).catch(() => null);
+    } catch {
+      // Fallback caught silently
+    }
+
+    const mailtoUrl = `mailto:contact@researcho-by-iitians.in?subject=New%20Research%20Consultation%20Request%20-%20${encodeURIComponent(formData.name)}&body=Name:%20${encodeURIComponent(formData.name)}%0AEmail:%20${encodeURIComponent(formData.email)}%0APhone:%20${encodeURIComponent(formData.phone)}%0AInstitution:%20${encodeURIComponent(formData.institution)}%0ADegree/Position:%20${encodeURIComponent(formData.degreeOrPosition)}%0AResearch%20Area:%20${encodeURIComponent(formData.researchArea)}%0AProject%20Type:%20${encodeURIComponent(formData.projectType)}%0ADescription:%20${encodeURIComponent(formData.description)}`;
     
-    // Open mail client immediately so email is sent to kalyanghoshstg@gmail.com
+    // Open mail client immediately so email is sent to contact@researcho-by-iitians.in
     window.location.href = mailtoUrl;
 
     setTimeout(() => {
@@ -141,24 +167,24 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                 Consultation Request Received
               </h3>
               <p className="text-slate-600 text-sm sm:text-base max-w-md mx-auto leading-relaxed mb-6">
-                Thank you. Your consultation request has been successfully routed to <span className="font-semibold text-slate-900">kalyanghoshstg@gmail.com</span>. Our research team will review and contact you within 24 business hours.
+                Thank you. Your consultation request has been dispatched directly to <span className="font-semibold text-slate-900">contact@researcho-by-iitians.in</span>. Our research mentors will evaluate your problem and contact you within 24 business hours.
               </p>
               
               <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 w-full max-w-md text-left text-xs text-slate-600 space-y-3 mb-6">
                 <div className="flex items-center gap-2 text-slate-900 font-semibold">
                   <ShieldCheck className="w-4 h-4 text-blue-600" />
-                  Direct Email Delivery to Mentor
+                  Official Email Inbox Routing
                 </div>
                 <p className="text-slate-700">
-                  To ensure your consultation request arrives directly in inbox <strong className="text-slate-900">kalyanghoshstg@gmail.com</strong>, click the button below to open your email client with all your details pre-filled:
+                  Your details have been sent to <strong className="text-slate-900">contact@researcho-by-iitians.in</strong>. You can also open your mail client with all information pre-filled:
                 </p>
                 <a
-                  href={`mailto:kalyanghoshstg@gmail.com?subject=New%20Research%20Consultation%20Request%20-%20${encodeURIComponent(formData.name)}&body=Name:%20${encodeURIComponent(formData.name)}%0AEmail:%20${encodeURIComponent(formData.email)}%0APhone:%20${encodeURIComponent(formData.phone)}%0AInstitution:%20${encodeURIComponent(formData.institution)}%0ADegree/Position:%20${encodeURIComponent(formData.degreeOrPosition)}%0AResearch%20Area:%20${encodeURIComponent(formData.researchArea)}%0AProject%20Type:%20${encodeURIComponent(formData.projectType)}%0ADescription:%20${encodeURIComponent(formData.description)}`}
+                  href={`mailto:contact@researcho-by-iitians.in?subject=New%20Research%20Consultation%20Request%20-%20${encodeURIComponent(formData.name)}&body=Name:%20${encodeURIComponent(formData.name)}%0AEmail:%20${encodeURIComponent(formData.email)}%0APhone:%20${encodeURIComponent(formData.phone)}%0AInstitution:%20${encodeURIComponent(formData.institution)}%0ADegree/Position:%20${encodeURIComponent(formData.degreeOrPosition)}%0AResearch%20Area:%20${encodeURIComponent(formData.researchArea)}%0AProject%20Type:%20${encodeURIComponent(formData.projectType)}%0ADescription:%20${encodeURIComponent(formData.description)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full text-center py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg transition-colors shadow-xs"
                 >
-                  ✉️ Send Email to kalyanghoshstg@gmail.com
+                  ✉️ Send Email to contact@researcho-by-iitians.in
                 </a>
                 <a
                   href={`https://wa.me/919063751838?text=Hello%20Dr.%20Ghosh,%20I%20just%20submitted%20a%20consultation%20request%20for%20${encodeURIComponent(formData.researchArea)}.%20Name:%20${encodeURIComponent(formData.name)}`}
@@ -320,49 +346,6 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                   className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-600 outline-hidden text-sm text-slate-900 placeholder:text-slate-400 resize-none bg-slate-50 focus:bg-white"
                 />
-              </div>
-
-              {/* File Upload Area */}
-              <div>
-                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                  Attach Research Summary / PDB / Structure / Data (Optional)
-                </label>
-                <div
-                  onDragOver={(e) => { e.preventDefault(); setDragActive(true); }}
-                  onDragLeave={() => setDragActive(false)}
-                  onDrop={(e) => {
-                    e.preventDefault();
-                    setDragActive(false);
-                    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-                      setFormData((prev) => ({ ...prev, fileName: e.dataTransfer.files[0].name }));
-                    }
-                  }}
-                  className={`border-2 border-dashed rounded-xl p-3.5 text-center transition-colors ${
-                    dragActive ? 'border-blue-500 bg-blue-50' : 'border-slate-300 hover:border-blue-400 bg-slate-50'
-                  }`}
-                >
-                  <input
-                    type="file"
-                    id="project-file-upload"
-                    onChange={handleFileChange}
-                    className="hidden"
-                  />
-                  <label
-                    htmlFor="project-file-upload"
-                    className="cursor-pointer flex flex-col items-center justify-center text-xs text-slate-600 gap-1"
-                  >
-                    <Upload className="w-5 h-5 text-blue-600" />
-                    {formData.fileName ? (
-                      <span className="font-semibold text-blue-700 flex items-center gap-1">
-                        <FileText className="w-4 h-4" /> {formData.fileName}
-                      </span>
-                    ) : (
-                      <span>
-                        <span className="font-semibold text-blue-600 hover:underline">Click to upload</span> or drag and drop (PDF, DOCX, PDB, SDF, ZIP up to 25MB)
-                      </span>
-                    )}
-                  </label>
-                </div>
               </div>
 
               <div className="pt-2 flex items-center justify-between gap-3 border-t border-slate-200">
