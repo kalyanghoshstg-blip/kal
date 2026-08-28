@@ -1,6 +1,6 @@
 {
   "name": "Researcho by IITians",
-  "description": "One-Stop Research & Training Solutions for Life Sciences, Biotechnology, Chemistry & Pharmacy.",
+  "description": "Research collaboration, scientific training, mentoring and professional research solutions across biotechnology, life sciences, chemistry, pharmacy, computational biology and drug discovery.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
