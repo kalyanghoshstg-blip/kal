@@ -610,17 +610,15 @@ export const FoundingMembersSection: React.FC<FoundingMembersSectionProps> = ({
                     Join Researcho by IITians as a mentor and become part of a growing community of researchers, students, academicians, and scientific professionals.
                   </p>
                 </div>
-                <button
-                  onClick={() => {
-                    setMentorSubmitted(false);
-                    setMentorForm({ name: '', designation: '', whatsappNo: '', researchArea: '', researchAreaDetails: '', photoFileName: '', bio: '', displayOnWebsite: 'Yes' });
-                    setShowMentorModal(true);
-                  }}
+                <a
+                  href="https://forms.gle/WKCS37wV8w4R1Ekj8"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-2 cursor-pointer shrink-0 self-start lg:self-auto"
                 >
                   <span>Apply as a Mentor</span>
                   <ArrowRight className="w-4 h-4" />
-                </button>
+                </a>
               </div>
 
               {/* Why to join details */}
