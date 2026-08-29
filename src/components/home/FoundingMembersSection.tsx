@@ -198,28 +198,6 @@ export const DOMAIN_MENTORS_DATA: DomainMentor[] = [
     expertisePills: ['QM/MM Calculations', 'Enzyme Kinetics', 'Active Site Docking', 'Gaussian'],
     bio: 'Leads hybrid quantum mechanical / molecular mechanical investigations into catalytic reaction pathways of novel industrial enzymes.',
     image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80'
-  },
-  {
-    id: 'dm-7',
-    name: 'Dr. Sharmistha Paul',
-    degrees: 'PhD (IIT Roorkee)',
-    affiliation: 'IIT Roorkee Alumnus • Synthetic Chemist',
-    domain: 'Medicinal & Organic Chemistry',
-    specialization: 'Heterocyclic Synthesis & 2D NMR Structure Verification',
-    expertisePills: ['2D NMR (HSQC/HMBC)', 'HRMS Fragmentation', 'Multi-Step Synthesis', 'Structure Elucidation'],
-    bio: 'Advises postgraduate and PhD students on multi-step synthetic routes, reaction mechanisms, and spectral characterization proofs.',
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80'
-  },
-  {
-    id: 'dm-8',
-    name: 'Dr. Arindam Mitra',
-    degrees: 'PhD (IIT Guwahati)',
-    affiliation: 'IIT Guwahati • Mass Spectrometry Specialist',
-    domain: 'Proteomics & Analytical Chemistry',
-    specialization: 'LC-MS/MS Proteomics & Post-Translational Modifications',
-    expertisePills: ['MaxQuant', 'Proteome Discoverer', 'PTM Mapping', 'Label-Free Quantification'],
-    bio: 'Focuses on bottom-up proteomics workflows, phosphoproteomics analysis, and validating biomarker candidates using LC-MS/MS.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80'
   }
 ];
 
