@@ -84,17 +84,17 @@ export const FOUNDING_MENTORS: MentorProfile[] = [
     institute: 'IIT Guwahati (PhD) • Postdoctoral Fellow (University of British Columbia, Vancouver, Canada)',
     image: kalyanRegImage,
     badge: 'PMRF Fellow (Govt. of India) & CIRTA 2026 (CIHR, Canada)',
-    shortBio: 'Researcher in pharmaceutical sciences, biochemistry, and structural biology with 15 peer-reviewed publications. Recipient of PMRF from Govt. of India and CIRTA 2026 award from CIHR, Govt. of Canada.',
+    shortBio: 'Researcher in pharmaceutical sciences, biochemistry, and structural biology with 15+ peer-reviewed publications. Recipient of PMRF from Govt. of India and CIRTA 2026 award from CIHR, Govt. of Canada.',
     fullBio: `Dr. Kalyan Ghosh completed his PhD from the Department of Biosciences and Bioengineering, Indian Institute of Technology (IIT) Guwahati under the Prime Minister's Research Fellowship (PMRF). His research centers on antimicrobial resistance, membrane protein biology, protein-ligand interactions, and structure-based drug discovery. Recipient of the prestigious CIRTA 2026 award from CIHR, Government of Canada, and Postdoctoral Fellow at University of British Columbia (UBC), Vancouver.`,
     highlights: [
       'PhD from Dept. of Biosciences & Bioengineering, IIT Guwahati',
       'Prime Minister\'s Research Fellowship (PMRF) by Govt. of India',
       'CIRTA 2026 Award (Canadian Institutes of Health Research, CIHR)',
       'Postdoctoral Fellow at University of British Columbia (UBC), Canada',
-      'Author of 15 Peer-Reviewed International Scientific Publications'
+      'Author of 15+ Peer-Reviewed International Scientific Publications'
     ],
     keySpecializations: [
-      'Structural Biology & Cryo-EM / Crystallography Analysis',
+      'Structural Biology & Cryo-EM / Crystallography',
       'Antimicrobial Resistance Molecular Mechanisms',
       'Membrane Protein Biology & Cardiac Transporters',
       'Protein-Ligand Interactions & Structure-Based Drug Discovery'
@@ -130,26 +130,28 @@ export const FOUNDING_MENTORS: MentorProfile[] = [
   {
     id: 'hanuman-singh-dagur',
     name: 'Dr. Hanuman Singh Dagur',
-    degrees: 'B.Sc., M.Sc., PhD (IIT Hyderabad)',
+    degrees: 'BS-MS, M-Tech, PhD (IIT Hyderabad)',
     role: 'Co-Founder & Lead Scientific Advisor',
-    institute: 'IIT Hyderabad (PhD) • Research Associate (IIT Hyderabad)',
+    institute: 'IIT Hyderabad (PhD) • Former Assistant Professor, Jaipur National University',
     image: drSubhashisMImg,
     badge: 'PMRF Fellow (Govt. of India) • IIT Hyderabad Scholar',
-    shortBio: 'Medicinal chemist and spectroscopic analyst specializing in rational small-molecule design, high-field 2D NMR interpretation, and virtual library screening.',
-    fullBio: `Dr. Hanuman Singh Dagur holds a PhD in Chemistry from IIT Hyderabad, focusing on synthetic organic chemistry, natural product analogues, and chemoinformatics. He leads spectral validation (1D/2D NMR, HRMS) and rational pharmacophore design across Researcho drug discovery initiatives.`,
+    shortBio: 'Researcher in molecular biology, pharmaceutical biotechnology, biochemistry, and structural biology. PMRF fellow from Dept. of Biotechnology, IIT Hyderabad.',
+    fullBio: `Dr. Hanuman Singh Dagur completed his PhD in Biotechnology from IIT Hyderabad under the Prime Minister's Research Fellowship (PMRF). His research investigates protein-nucleic acid recognition, enzyme active-site architecture, and molecular catalysis and regulation mechanisms. Author of 7 peer-reviewed publications and former Assistant Professor at Jaipur National University.`,
     highlights: [
-      'PhD in Chemistry from IIT Hyderabad',
-      'Expert in High-Resolution 2D NMR (COSY, HSQC, HMBC) Elucidation',
-      'Virtual Screening & Pharmacophore Design Specialist',
-      '10+ Peer-Reviewed Publications in Organic & Medicinal Chemistry'
+      'PhD from Dept. of Biotechnology, IIT Hyderabad',
+      'Prime Minister\'s Research Fellowship (PMRF) by Ministry of Education, Govt. of India',
+      '7 Peer-Reviewed Research Articles in Reputed National & International Journals',
+      'Former Assistant Professor at Jaipur National University, Jaipur',
+      'Specialist in Protein-Nucleic Acid Recognition & Enzyme Catalysis'
     ],
     keySpecializations: [
-      'Medicinal Chemistry & Rational Drug Design',
-      '2D NMR & Mass Spectrometry Structure Verification',
-      'Chemoinformatics, Pharmacophore Mapping & QSAR',
-      'ADMET In Silico Profiling & Lead Optimization'
+      'Molecular Biology & Primer Engineering',
+      'Pharmaceutical Biotechnology & Biochemistry',
+      'Protein-Nucleic Acid Recognition & Interactions',
+      'Enzyme Active Site Architecture & Catalysis',
+      'Chemical Biology & Structural Biology'
     ],
-    publicationsCount: '10+ Publications',
+    publicationsCount: '7 Publications',
     fellowships: ['PMRF (Govt. of India)']
   }
 ];
