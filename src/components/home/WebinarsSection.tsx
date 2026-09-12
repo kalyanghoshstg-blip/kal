@@ -32,22 +32,20 @@ export const WebinarsSection: React.FC<WebinarsSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 sm:mb-8">
-          <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-2 border border-blue-200/60">
-              <Video className="w-3.5 h-3.5 text-blue-600" />
-              Scientific Webinars & Masterclasses
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
-              Researcho Webinars
-            </h2>
-            <p className="mt-2 text-xs sm:text-sm text-slate-600 max-w-xl">
-              Free interactive scientific sessions covering emerging frontiers in computational drug design, multi-omics, spectroscopy, and international PhD opportunities.
-            </p>
+        <div className="text-center max-w-3xl mx-auto mb-7 sm:mb-9">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-2.5 border border-blue-200/60">
+            <Video className="w-3.5 h-3.5 text-blue-600" />
+            Scientific Webinars & Masterclasses
           </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
+            Researcho Webinars
+          </h2>
+          <p className="mt-2 text-xs sm:text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
+            Free interactive scientific sessions covering emerging frontiers in computational drug design, multi-omics, spectroscopy, and international PhD opportunities.
+          </p>
 
           {/* Tab Switcher */}
-          <div className="inline-flex p-1 bg-slate-100 rounded-xl border border-slate-200">
+          <div className="mt-5 sm:mt-6 inline-flex p-1 bg-slate-100 rounded-xl border border-slate-200">
             <button
               onClick={() => setTab('upcoming')}
               className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${

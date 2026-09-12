@@ -318,8 +318,10 @@ export const ContactView: React.FC = () => {
                     >
                       <option value="Biotechnology & Life Sciences">Biotechnology & Life Sciences</option>
                       <option value="Computational Drug Discovery">Computational Drug Discovery</option>
-                      <option value="Molecular Dynamics & Structural Bio">Molecular Dynamics & Structural Bio</option>
+                      <option value="Molecular Dynamics Simulations">Molecular Dynamics Simulations</option>
+                      <option value="Structural Biology & Crystallography">Structural Biology & Crystallography</option>
                       <option value="Bioinformatics & Genomics">Bioinformatics & Genomics</option>
+                      <option value="Molecular Biology & Primer Design">Molecular Biology & Primer Design</option>
                       <option value="Chemistry & NMR Spectroscopy">Chemistry & NMR Spectroscopy</option>
                       <option value="Pharmacy & Pharmacology">Pharmacy & Pharmacology</option>
                       <option value="Scientific Writing & Editing">Scientific Writing & Editing</option>

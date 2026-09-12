@@ -12,7 +12,8 @@ import {
   Layers, 
   ShieldCheck, 
   ChevronRight,
-  Target
+  Target,
+  Dna
 } from 'lucide-react';
 import { RESEARCH_SERVICES } from '../../data/researchData';
 import { PageView } from '../../types';
@@ -20,13 +21,33 @@ import { PageView } from '../../types';
 interface ResearchServicesSectionProps {
   onNavigate: (view: PageView, anchorId?: string) => void;
   onOpenConsultation: (serviceTitle?: string, projectType?: string) => void;
+  initialServiceId?: string;
 }
 
 export const ResearchServicesSection: React.FC<ResearchServicesSectionProps> = ({
   onNavigate,
   onOpenConsultation,
+  initialServiceId,
 }) => {
-  const [activeServiceId, setActiveServiceId] = useState<string>('computational-drug-discovery');
+  const [activeServiceId, setActiveServiceId] = useState<string>(initialServiceId || 'computational-drug-discovery');
+
+  React.useEffect(() => {
+    if (initialServiceId) {
+      setActiveServiceId(initialServiceId);
+    }
+  }, [initialServiceId]);
+
+  React.useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && RESEARCH_SERVICES.some((s) => s.id === hash)) {
+        setActiveServiceId(hash);
+      }
+    };
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
 
   const activeService = RESEARCH_SERVICES.find((s) => s.id === activeServiceId) || RESEARCH_SERVICES[0];
 
@@ -34,9 +55,11 @@ export const ResearchServicesSection: React.FC<ResearchServicesSectionProps> = (
     switch (iconName) {
       case 'Sparkles': return <Sparkles className="w-5 h-5 text-blue-600" />;
       case 'Activity': return <Activity className="w-5 h-5 text-sky-600" />;
+      case 'Layers': return <Layers className="w-5 h-5 text-teal-600" />;
       case 'Cpu': return <Cpu className="w-5 h-5 text-indigo-600" />;
       case 'FlaskConical': return <FlaskConical className="w-5 h-5 text-cyan-600" />;
       case 'Network': return <Network className="w-5 h-5 text-blue-600" />;
+      case 'Dna': return <Dna className="w-5 h-5 text-emerald-600" />;
       case 'TestTube2': return <TestTube2 className="w-5 h-5 text-emerald-600" />;
       case 'FileText': return <FileText className="w-5 h-5 text-blue-700" />;
       default: return <Sparkles className="w-5 h-5 text-blue-600" />;
@@ -74,6 +97,7 @@ export const ResearchServicesSection: React.FC<ResearchServicesSectionProps> = (
               return (
                 <button
                   key={service.id}
+                  id={service.id}
                   onClick={() => setActiveServiceId(service.id)}
                   className={`w-full text-left p-2 sm:p-2.5 rounded-xl transition-all duration-150 flex items-center justify-between cursor-pointer ${
                     isSelected

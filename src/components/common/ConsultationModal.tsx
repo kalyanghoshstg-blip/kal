@@ -299,8 +299,10 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                   >
                     <option value="Biotechnology">Biotechnology</option>
                     <option value="Computational Drug Discovery">Computational Drug Discovery</option>
-                    <option value="Molecular Dynamics & Structural Biology">Molecular Dynamics & Structural Biology</option>
+                    <option value="Molecular Dynamics">Molecular Dynamics</option>
+                    <option value="Structural Biology">Structural Biology</option>
                     <option value="Bioinformatics & Genomics">Bioinformatics & Genomics</option>
+                    <option value="Molecular Biology & Primer Design">Molecular Biology & Primer Design</option>
                     <option value="Chemistry & NMR Spectroscopy">Chemistry & NMR Spectroscopy</option>
                     <option value="Medicinal Chemistry">Medicinal Chemistry</option>
                     <option value="Pharmacy & Pharmacology">Pharmacy & Pharmacology</option>
@@ -323,7 +325,9 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                 >
                   <option value="Molecular Docking / Virtual Screening Analysis">Molecular Docking / Virtual Screening Analysis</option>
                   <option value="Molecular Dynamics (GROMACS) Simulation">Molecular Dynamics (GROMACS) Simulation</option>
+                  <option value="Structure Solving / Density Mapping / Refinement">Structure Solving / Density Mapping / Refinement</option>
                   <option value="Bioinformatics / RNA-Seq Differential Expression">Bioinformatics / RNA-Seq Differential Expression</option>
+                  <option value="Primer Design / Mutant Primer (SDM) & In Silico Cloning">Primer Design / Mutant Primer (SDM) & In Silico Cloning</option>
                   <option value="NMR / LC-MS / Spectroscopy Structure Elucidation">NMR / LC-MS / Spectroscopy Structure Elucidation</option>
                   <option value="Research Manuscript Language & Structure Editing">Research Manuscript Language & Structure Editing</option>
                   <option value="Final-Year Academic Project Mentorship">Final-Year Academic Project Mentorship</option>

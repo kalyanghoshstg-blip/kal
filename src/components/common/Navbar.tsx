@@ -88,7 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 onClick={() => handleNavClick('services')}
                 className={`flex items-center gap-1 px-3 py-1.5 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
-                  currentView === 'services' || currentView === 'computational-drug-discovery' || currentView === 'molecular-dynamics' || currentView === 'bioinformatics' || currentView === 'chemistry' || currentView === 'medicinal-chemistry' || currentView === 'scientific-writing'
+                  currentView === 'services' || currentView === 'computational-drug-discovery' || currentView === 'molecular-dynamics' || currentView === 'bioinformatics' || currentView === 'molecular-biology' || currentView === 'chemistry' || currentView === 'medicinal-chemistry' || currentView === 'scientific-writing'
                     ? 'text-blue-600 bg-blue-50 font-semibold'
                     : 'text-slate-700 hover:text-blue-600 hover:bg-slate-50'
                 }`}
@@ -111,13 +111,25 @@ export const Navbar: React.FC<NavbarProps> = ({
                       onClick={() => handleNavClick('services', 'molecular-dynamics')}
                       className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-xs font-medium cursor-pointer transition-colors"
                     >
-                      Molecular Dynamics & Structural Biology
+                      Molecular Dynamics
+                    </button>
+                    <button
+                      onClick={() => handleNavClick('services', 'structural-biology')}
+                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-xs font-medium cursor-pointer transition-colors"
+                    >
+                      Structural Biology
                     </button>
                     <button
                       onClick={() => handleNavClick('services', 'bioinformatics')}
                       className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-xs font-medium cursor-pointer transition-colors"
                     >
                       Bioinformatics & Multi-Omics
+                    </button>
+                    <button
+                      onClick={() => handleNavClick('services', 'molecular-biology')}
+                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-xs font-medium cursor-pointer transition-colors"
+                    >
+                      Molecular Biology & Primer Design
                     </button>
                     <button
                       onClick={() => handleNavClick('services', 'chemistry')}

@@ -14,11 +14,13 @@ import { PageView } from '../types';
 interface HomePageProps {
   onNavigate: (view: PageView, anchorId?: string) => void;
   onOpenConsultation: (researchArea?: string, projectType?: string) => void;
+  initialServiceId?: string;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
   onNavigate,
   onOpenConsultation,
+  initialServiceId,
 }) => {
   return (
     <div className="w-full">
@@ -50,6 +52,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       <ResearchServicesSection 
         onNavigate={onNavigate} 
         onOpenConsultation={onOpenConsultation} 
+        initialServiceId={initialServiceId}
       />
 
       {/* 6. Researcho Academy (Featured Course, Advanced Courses, Workshops & Funnel) */}

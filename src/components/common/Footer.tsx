@@ -164,7 +164,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('services', 'molecular-dynamics')}
+                  onClick={() => onNavigate('services', 'structural-biology')}
                   className="hover:text-blue-400 transition-colors text-left cursor-pointer"
                 >
                   Structural Biology
@@ -176,6 +176,14 @@ export const Footer: React.FC<FooterProps> = ({
                   className="hover:text-blue-400 transition-colors text-left cursor-pointer"
                 >
                   Bioinformatics & Multi-Omics
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate('services', 'molecular-biology')}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
+                  Molecular Biology & Primer Design
                 </button>
               </li>
               <li>

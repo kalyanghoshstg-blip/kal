@@ -29,10 +29,31 @@ export default function App() {
     researchArea?: string;
     projectType?: string;
   }>({});
+  const [selectedServiceId, setSelectedServiceId] = useState<string | undefined>();
 
   // Scroll to top or specific anchor when navigating
   const handleNavigate = (view: PageView, anchorId?: string) => {
-    setCurrentView(view);
+    const serviceIds = [
+      'computational-drug-discovery',
+      'molecular-dynamics',
+      'structural-biology',
+      'bioinformatics',
+      'molecular-biology',
+      'chemistry',
+      'medicinal-chemistry',
+      'scientific-writing',
+    ];
+
+    if (serviceIds.includes(view)) {
+      setSelectedServiceId(view);
+      setCurrentView('services');
+      anchorId = view;
+    } else {
+      if (anchorId && serviceIds.includes(anchorId)) {
+        setSelectedServiceId(anchorId);
+      }
+      setCurrentView(view);
+    }
     
     if (anchorId) {
       setTimeout(() => {
@@ -69,6 +90,7 @@ export default function App() {
           <HomePage 
             onNavigate={handleNavigate} 
             onOpenConsultation={handleOpenConsultation} 
+            initialServiceId={selectedServiceId}
           />
         )}
 
@@ -88,6 +110,7 @@ export default function App() {
             <ResearchServicesSection 
               onNavigate={handleNavigate} 
               onOpenConsultation={handleOpenConsultation} 
+              initialServiceId={selectedServiceId}
             />
           </div>
         )}

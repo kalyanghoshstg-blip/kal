@@ -107,32 +107,61 @@ export const RESEARCH_SERVICES: ServiceCategory[] = [
   },
   {
     id: 'molecular-dynamics',
-    title: 'Molecular Dynamics & Structural Biology',
-    subtitle: 'Nanosecond to microsecond conformational trajectory analysis and free energy calculations.',
+    title: 'Molecular Dynamics',
+    badge: 'High-Performance Computing',
+    subtitle: 'Nanosecond to microsecond conformational trajectory analysis, stability, and free energy calculations.',
     iconName: 'Activity',
-    description: 'Investigate dynamic conformational transitions, protein-protein interactions, and membrane-bound complexes with high-performance GPU-accelerated molecular simulations.',
+    description: 'Investigate dynamic conformational transitions, protein-ligand stability, allosteric pathways, and membrane transport systems using high-performance GPU-accelerated GROMACS, NAMD, and AMBER simulations.',
     servicesList: [
-      'Molecular dynamics simulations (Solvated periodic boundary systems)',
-      'Protein stability & conformational flexibility analysis',
-      'Protein–ligand complex stability & residence time analysis',
-      'RMSD (Root-Mean-Square Deviation) & RMSF (Fluctuation) profiling',
-      'Radius of gyration (Rg) & compactness calculations',
-      'Time-dependent Hydrogen-bond occupancy analysis',
-      'Solvent Accessible Surface Area (SASA) dynamics',
-      'Principal Component Analysis (PCA) & Free Energy Landscapes (FEL)',
-      'Molecular Mechanics/Poisson-Boltzmann Surface Area (MM/PBSA)',
-      'Molecular Mechanics/Generalized Born Surface Area (MM/GBSA)',
-      'Protein tertiary structure analysis & active site volume mapping',
-      'Homology modelling & AlphaFold-2 structure refinement',
-      'Structure validation (Ramachandran plots, ERRAT, ProSa-Web)',
-      'Protein–protein & Protein–peptide interface interaction mapping'
+      'All-atom molecular dynamics simulations (Solvated periodic boundary systems)',
+      'Protein stability & conformational flexibility analysis across trajectories',
+      'Protein–ligand complex stability, binding pose drift & residence time profiling',
+      'RMSD (Root-Mean-Square Deviation) & RMSF (Fluctuation) statistical profiling',
+      'Radius of gyration (Rg) & compactness trajectory calculations',
+      'Time-dependent Hydrogen-bond network & persistence occupancy analysis',
+      'Solvent Accessible Surface Area (SASA) dynamics & hydrophobic core exposure',
+      'Principal Component Analysis (PCA) & Free Energy Landscapes (FEL 2D/3D)',
+      'Molecular Mechanics/Poisson-Boltzmann Surface Area (MM/PBSA) binding free energy',
+      'Molecular Mechanics/Generalized Born Surface Area (MM/GBSA) free energy decomposition',
+      'Membrane protein-bilayer embedding (POPC/POPE) & lipid-protein interaction simulations',
+      'Steered molecular dynamics (SMD), targeted pulling & umbrella sampling',
+      'Markov State Modeling (MSM) & long-timescale conformational transition analysis'
     ],
-    toolsUsed: ['GROMACS', 'NAMD', 'AMBER', 'VMD', 'Bio3D', 'PyMOL', 'AlphaFold', 'Modeller'],
+    toolsUsed: ['GROMACS', 'NAMD', 'AMBER', 'VMD', 'Bio3D', 'PyMOL', 'OriginPro', 'gmx_MMPBSA'],
     deliverables: [
-      'Processed Trajectory Files & Coordinate Snapshots',
-      'Time-Evolution Plots (RMSD, RMSF, Rg, H-Bonds, SASA)',
-      'Free Energy Landscape 2D/3D Contour Maps',
-      'Binding Energy Decomposition Profiles per Residue'
+      'Processed Trajectory Files & Coordinate Snapshots (.xtc, .gro, .pdb)',
+      'Time-Evolution Plots (RMSD, RMSF, Rg, H-Bonds, SASA, PCA)',
+      'Free Energy Landscape (FEL) 2D/3D Contour Maps & Basin Clustering',
+      'Per-Residue Binding Free Energy Decomposition Matrix'
+    ]
+  },
+  {
+    id: 'structural-biology',
+    title: 'Structural Biology',
+    badge: 'Macromolecular Architecture',
+    subtitle: 'Structure solving, electron density mapping, Fo-Fc map generation, atomic refinement, and validation.',
+    iconName: 'Layers',
+    description: 'Comprehensive macromolecular structural biology support spanning X-ray crystallography and cryo-EM workflows: from phasing and experimental density mapping to real-space refinement, difference map generation, and high-precision validation.',
+    servicesList: [
+      'Structure solving via Molecular Replacement (MR) & experimental phasing (SAD/MAD)',
+      'Electron density mapping (2Fo-Fc maps & Fo-Fc difference Fourier map generation)',
+      'Fo-Fc difference map peak identification for unknown ligands, cofactors & ions',
+      'Real-space & reciprocal-space atomic model refinement (Phenix, REFMAC5, BUSTER)',
+      'Model building, loop modeling, ligand fitting & solvent/water placement (Coot)',
+      'Cryo-EM single-particle density map sharpening & atomic model docking',
+      'Stereochemical structure validation (Ramachandran plots, MolProbity, ERRAT, ProSa-Web)',
+      'B-factor / atomic displacement parameter (ADP) & occupancy optimization',
+      'Homology modeling & AlphaFold-2 / AlphaFold-3 structural prediction and multimer assembly',
+      'Protein tertiary & quaternary structure analysis and active site volume cavity mapping',
+      'Protein–protein, protein–nucleic acid & protein–peptide interface interaction mapping',
+      'PDB validation report generation & PDB deposition compliance preparation'
+    ],
+    toolsUsed: ['Phenix', 'CCP4 Suite', 'Coot', 'REFMAC5', 'MolProbity', 'AlphaFold', 'Modeller', 'PyMOL', 'ChimeraX'],
+    deliverables: [
+      'Solved & Refined 3D Coordinate Files (.pdb, .cif)',
+      'Electron Density Map Coefficients & Grids (2Fo-Fc, Fo-Fc in .mtz & .ccp4 format)',
+      'Official MolProbity & PDB Validation Metric Summary Reports',
+      'Publication-Grade Ray-Traced 3D Structural Figures & Density Fitting Visuals'
     ]
   },
   {
@@ -163,6 +192,42 @@ export const RESEARCH_SERVICES: ServiceCategory[] = [
       'Interactive Clustered Heatmaps & Pathway Enrichment Visualizations',
       'Biological Network Topologies & Hub Protein Identification',
       'Reproducible R/Python Analysis Markdown Notebooks'
+    ]
+  },
+  {
+    id: 'molecular-biology',
+    title: 'Molecular Biology & Primer Engineering',
+    badge: 'Molecular Tools',
+    subtitle: 'Standard primer design, mutant & SDM primers, vector construction, and cloning strategies.',
+    iconName: 'Dna',
+    description: 'Specialized computational molecular biology support featuring high-fidelity standard primer design, site-directed mutagenesis mutant primer engineering, recombinant vector assembly, and restriction profiling.',
+    servicesList: [
+      'Standard PCR Primer Design (Forward & Reverse with Tm, GC% clamp, secondary structure & primer-dimer screening)',
+      'Site-Directed Mutagenesis (SDM) & Mutant Primer Design (Point mutations, codon substitutions, insertions & deletions)',
+      'Overlap Extension PCR (OE-PCR) Primers for seamless chimeric constructs & fusion proteins',
+      'Degenerate Primer Design for homologous gene discovery & conserved domain targeting',
+      'Real-Time qPCR & RT-qPCR Primer Design (Exon-junction spanning, amplicon length & probe design)',
+      'Multiplex PCR Primer Compatibility & Cross-Dimer Thermodynamic Scoring',
+      'Colony PCR & Sanger Sequencing Primer Design for insert verification',
+      'Restriction site incorporation with protective flanking bases (NEB buffer & enzyme cleavage compatibility)',
+      'In silico recombinant plasmid construction, vector linearization & Golden Gate / Gibson assembly design',
+      'Codon optimization & rare codon bias elimination for heterologous bacterial & mammalian expression',
+      'CRISPR/Cas9 single guide RNA (sgRNA) design, protospacer adjacent motif (PAM) analysis & off-target evaluation',
+      'Plasmid feature mapping, open reading frame (ORF) annotation & publication-ready circular/linear maps'
+    ],
+    workflowSteps: [
+      { step: '01. TARGET', title: 'Target Selection', desc: 'Gene sequence retrieval, CDS verification, and exon-intron boundary mapping.' },
+      { step: '02. DESIGN', title: 'Primer / SDM Design', desc: 'High-fidelity primer synthesis with stringent Tm matching and secondary structure avoidance.' },
+      { step: '03. VALIDATION', title: 'Specificity Check', desc: 'In silico PCR, BLAST specificity screening, and dimer/hairpin thermodynamic scoring (ΔG).' },
+      { step: '04. CLONING', title: 'Vector Integration', desc: 'Restriction site addition, overhang tailoring, plasmid mapping, and reading-frame preservation.' },
+      { step: '05. DOSSIER', title: 'Protocol & Dossier', desc: 'Standardized sequence specifications, mutation alignment maps, and PCR cycling protocols.' }
+    ],
+    toolsUsed: ['SnapGene', 'Primer3 / NCBI Primer-BLAST', 'OligoCalc', 'NEBcutter', 'Benchling', 'CRISPR-P', 'JCat', 'Serial Cloner'],
+    deliverables: [
+      'Standardized Primer Specification Dossiers (5\'→3\' Sequences, Length, Tm, GC%, ΔG Dimer Values)',
+      'Mutant Primer Annealing Alignments & Target Amino Acid Mutation Schematics',
+      'Fully Annotated In Silico Vector / Plasmid Maps (.dna, .gbk, SVG/PDF Graphics)',
+      'PCR Thermocycling Profiles & Experimental Troubleshooting Protocols'
     ]
   },
   {

@@ -327,19 +327,6 @@ export const FoundingMembersSection: React.FC<FoundingMembersSectionProps> = ({
                           {founder.fullBio}
                         </div>
 
-                        {/* Highlights Bullet List */}
-                        <div className="space-y-1.5 text-xs text-slate-700">
-                          <div className="text-[11px] font-bold text-slate-900 uppercase tracking-wider">
-                            Key Highlights:
-                          </div>
-                          {founder.highlights.map((hl, i) => (
-                            <div key={i} className="flex items-start gap-1.5">
-                              <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0 mt-0.5" />
-                              <span className="leading-snug text-slate-600 text-[11px]">{hl}</span>
-                            </div>
-                          ))}
-                        </div>
-
                         {/* Specialization Tags */}
                         <div>
                           <div className="text-[11px] font-bold text-slate-900 uppercase tracking-wider mb-1.5">
