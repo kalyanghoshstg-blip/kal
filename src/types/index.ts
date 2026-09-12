@@ -3,6 +3,7 @@ export type PageView =
   | 'services'
   | 'computational-drug-discovery'
   | 'molecular-dynamics'
+  | 'protein-ligand-membrane-simulation'
   | 'structural-biology'
   | 'bioinformatics'
   | 'molecular-biology'
@@ -106,7 +107,7 @@ export interface WebinarItem {
 export interface CareerProgram {
   id: string;
   title: string;
-  category: 'Academic Guidance' | 'PhD Guidance' | 'International Research' | 'Industry Careers';
+  category: 'Academic Guidance' | 'PhD Guidance' | 'International Research' | 'Industry Careers' | 'CV & Cover Letter' | 'Fellowship Applications';
   targetAudience: string[];
   summary: string;
   keyOfferings: string[];

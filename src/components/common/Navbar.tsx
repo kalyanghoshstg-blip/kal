@@ -15,18 +15,21 @@ import {
   Users
 } from 'lucide-react';
 import { BrandLogo } from './BrandLogo';
+import { SearchBar } from './SearchBar';
 import { PageView } from '../../types';
 
 interface NavbarProps {
   currentView: PageView;
   onNavigate: (view: PageView, anchorId?: string) => void;
   onOpenConsultation: (researchArea?: string, projectType?: string) => void;
+  onOpenSearch: (query?: string) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   currentView,
   onNavigate,
   onOpenConsultation,
+  onOpenSearch,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -88,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 onClick={() => handleNavClick('services')}
                 className={`flex items-center gap-1 px-3 py-1.5 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
-                  currentView === 'services' || currentView === 'computational-drug-discovery' || currentView === 'molecular-dynamics' || currentView === 'bioinformatics' || currentView === 'molecular-biology' || currentView === 'chemistry' || currentView === 'medicinal-chemistry' || currentView === 'scientific-writing'
+                  currentView === 'services' || currentView === 'computational-drug-discovery' || currentView === 'molecular-dynamics' || currentView === 'protein-ligand-membrane-simulation' || currentView === 'bioinformatics' || currentView === 'molecular-biology' || currentView === 'chemistry' || currentView === 'medicinal-chemistry' || currentView === 'scientific-writing'
                     ? 'text-blue-600 bg-blue-50 font-semibold'
                     : 'text-slate-700 hover:text-blue-600 hover:bg-slate-50'
                 }`}
@@ -111,7 +114,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       onClick={() => handleNavClick('services', 'molecular-dynamics')}
                       className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-xs font-medium cursor-pointer transition-colors"
                     >
-                      Molecular Dynamics
+                      Molecular Dynamics & Membrane Simulation
                     </button>
                     <button
                       onClick={() => handleNavClick('services', 'structural-biology')}
@@ -285,18 +288,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </nav>
 
-          {/* Primary CTA button on the right */}
-          <div className="hidden lg:flex items-center gap-2.5">
+          {/* Primary CTA and Search button on the right */}
+          <div className="flex items-center gap-2">
+            <SearchBar onOpenSearch={onOpenSearch} variant="navbar" />
           </div>
 
           {/* Mobile hamburger menu */}
           <div className="flex xl:hidden items-center gap-2">
-            <button
-              onClick={() => onOpenConsultation()}
-              className="px-3 py-2 rounded-lg bg-blue-600 text-white text-xs font-semibold shadow-sm sm:hidden cursor-pointer"
-            >
-              Consultation
-            </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-slate-700 hover:text-blue-600 hover:bg-slate-100 focus:outline-none cursor-pointer"
@@ -311,6 +309,18 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="xl:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-2xl max-h-[85vh] overflow-y-auto">
+          {/* Mobile Search Bar */}
+          <div className="pb-2 border-b border-slate-100">
+            <SearchBar 
+              onOpenSearch={(query) => {
+                setMobileMenuOpen(false);
+                onOpenSearch(query);
+              }} 
+              variant="inline" 
+              placeholder="Search services, mentors, courses..."
+            />
+          </div>
+
           <div className="grid grid-cols-2 gap-2 pb-3 border-b border-slate-100">
             <button
               onClick={() => handleNavClick('home')}

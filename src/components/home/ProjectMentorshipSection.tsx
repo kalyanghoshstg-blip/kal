@@ -36,20 +36,12 @@ const MENTORSHIP_PILLARS = [
     tag: 'Phase 2'
   },
   {
-    id: 'computational-docking',
-    title: 'Computational & Docking Analysis',
-    icon: <Cpu className="w-5 h-5 text-cyan-600" />,
-    iconBg: 'bg-cyan-50',
-    description: 'Step-by-step guidance setting up AutoDock Vina, GROMACS, or RNA-seq pipelines, generating verifiable raw trajectory data and affinity matrices.',
-    tag: 'Phase 3'
-  },
-  {
     id: 'data-interpretation',
     title: 'Scientific Data Interpretation',
     icon: <Layers className="w-5 h-5 text-emerald-600" />,
     iconBg: 'bg-emerald-50',
     description: 'Transforming complex outputs (RMSD plots, PCA landscapes, 2D interaction maps, DESeq2 volcano plots) into coherent scientific arguments.',
-    tag: 'Phase 4'
+    tag: 'Phase 3'
   },
   {
     id: 'dissertation-editing',
@@ -57,7 +49,7 @@ const MENTORSHIP_PILLARS = [
     icon: <FileText className="w-5 h-5 text-sky-600" />,
     iconBg: 'bg-sky-50',
     description: 'Professional language editing, figure formatting, bibliography cross-validation, and structural refinement ensuring university guideline compliance.',
-    tag: 'Phase 5'
+    tag: 'Phase 4'
   },
   {
     id: 'defense-viva',
@@ -65,7 +57,7 @@ const MENTORSHIP_PILLARS = [
     icon: <Sparkles className="w-5 h-5 text-blue-600" />,
     iconBg: 'bg-blue-50',
     description: 'Presentation slide design support, mock question coaching, and technical articulation practice to defend your dissertation with confidence.',
-    tag: 'Phase 6'
+    tag: 'Phase 5'
   },
 ];
 

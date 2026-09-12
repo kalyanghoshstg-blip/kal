@@ -8,18 +8,22 @@ import {
   Activity,
   Layers,
   BookOpen,
-  Users
+  Users,
+  Clock
 } from 'lucide-react';
+import { SearchBar } from '../common/SearchBar';
 import { PageView } from '../../types';
 
 interface HeroSectionProps {
   onNavigate: (view: PageView, anchorId?: string) => void;
   onOpenConsultation: (researchArea?: string, projectType?: string) => void;
+  onOpenSearch?: (query?: string) => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   onNavigate,
   onOpenConsultation,
+  onOpenSearch,
 }) => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-blue-950 to-slate-900 text-white pt-10 pb-12 lg:pt-14 lg:pb-16">
@@ -127,8 +131,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <span>Real Research Workflows</span>
             </div>
             <div className="flex items-center gap-2 justify-center">
-              <Layers className="w-4 h-4 text-sky-400 shrink-0" />
-              <span>End-to-End Solutions</span>
+              <Clock className="w-4 h-4 text-sky-400 shrink-0" />
+              <span>24x7</span>
             </div>
           </div>
 

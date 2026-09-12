@@ -14,12 +14,14 @@ import { PageView } from '../types';
 interface HomePageProps {
   onNavigate: (view: PageView, anchorId?: string) => void;
   onOpenConsultation: (researchArea?: string, projectType?: string) => void;
+  onOpenSearch?: (query?: string) => void;
   initialServiceId?: string;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
   onNavigate,
   onOpenConsultation,
+  onOpenSearch,
   initialServiceId,
 }) => {
   return (
@@ -28,6 +30,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       <HeroSection 
         onNavigate={onNavigate} 
         onOpenConsultation={onOpenConsultation} 
+        onOpenSearch={onOpenSearch}
       />
 
       {/* 2. Founding Members Section */}

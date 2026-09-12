@@ -13,7 +13,8 @@ import {
   ShieldCheck, 
   ChevronRight,
   Target,
-  Dna
+  Dna,
+  Waves
 } from 'lucide-react';
 import { RESEARCH_SERVICES } from '../../data/researchData';
 import { PageView } from '../../types';
@@ -55,6 +56,7 @@ export const ResearchServicesSection: React.FC<ResearchServicesSectionProps> = (
     switch (iconName) {
       case 'Sparkles': return <Sparkles className="w-5 h-5 text-blue-600" />;
       case 'Activity': return <Activity className="w-5 h-5 text-sky-600" />;
+      case 'Waves': return <Waves className="w-5 h-5 text-cyan-600" />;
       case 'Layers': return <Layers className="w-5 h-5 text-teal-600" />;
       case 'Cpu': return <Cpu className="w-5 h-5 text-indigo-600" />;
       case 'FlaskConical': return <FlaskConical className="w-5 h-5 text-cyan-600" />;

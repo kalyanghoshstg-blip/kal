@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;0,900;1,800;1,900&amp;family=Plus+Jakarta+Sans:wght@700;800;900&amp;display=swap');
+      
+      .logo-title {
+        font-family: 'Montserrat', 'Arial Black', -apple-system, sans-serif;
+        font-weight: 900;
+        font-style: italic;
+        font-size: 140px;
+        fill: #0B2350;
+        letter-spacing: -2px;
+      }
+      .logo-subtitle {
+        font-family: 'Plus Jakarta Sans', 'Montserrat', -apple-system, sans-serif;
+        font-weight: 800;
+        font-size: 64px;
+        fill: #0B2350;
+      }
+      .logo-tagline {
+        font-family: 'Plus Jakarta Sans', 'Montserrat', -apple-system, sans-serif;
+        font-weight: 800;
+        font-size: 38px;
+        fill: #0E6816;
+        letter-spacing: 0.5px;
+      }
+    </style>
+  </defs>
+
+  <g id="logo-root">
+    <!-- 1. Top Row: Research + O with graduation cap -->
+    <text x="25" y="160" class="logo-title">Research</text>
+
+    <!-- Orange O tilted to match italic Research -->
+    <g transform="translate(780, 25)">
+      <!-- Orange Ring O -->
+      <g transform="skewX(-10)">
+        <ellipse cx="60" cy="92" rx="46" ry="56" fill="#F05000" />
+        <ellipse cx="60" cy="92" rx="23" ry="32" fill="#FFFFFF" />
+      </g>
+      
+      <!-- Graduation Cap sitting centered on top of O -->
+      <g id="cap" transform="translate(4, -18)">
+        <!-- Headband / Skull cap arc resting on O -->
+        <path d="M 12 40 Q 56 20 100 40 L 96 48 Q 56 30 16 48 Z" fill="#0B2350" />
+        <path d="M 14 38 Q 56 22 98 38" stroke="#FFFFFF" stroke-width="3.5" fill="none" />
+        
+        <!-- Diamond Board -->
+        <polygon points="56,2 112,26 56,48 0,26" fill="#0B2350" />
+        <polygon points="56,8 102,26 56,42 10,26" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round" fill="none" />
+        
+        <!-- Button/Stud -->
+        <ellipse cx="56" cy="25" rx="4.5" ry="2.8" fill="#FFFFFF" />
+        <ellipse cx="56" cy="25" rx="2.8" ry="1.6" fill="#0B2350" />
+        
+        <!-- Tassel -->
+        <path d="M 56 25 Q 92 24 106 32 Q 112 38 110 48" stroke="#0B2350" stroke-width="3.8" stroke-linecap="round" fill="none" />
+        <path d="M 56 25 Q 92 24 106 32 Q 112 38 110 48" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" fill="none" />
+        <circle cx="110" cy="52" r="3.5" fill="#0B2350" />
+        <polygon points="106,55 114,55 116,84 104,84" fill="#0B2350" />
+      </g>
+    </g>
+
+    <!-- 2. Main Horizontal Divider Line -->
+    <line x1="15" y1="195" x2="985" y2="195" stroke="#0B2350" stroke-width="9" stroke-linecap="round" />
+    <!-- Orange highlight segment in middle -->
+    <line x1="330" y1="195" x2="620" y2="195" stroke="#F05000" stroke-width="9" stroke-linecap="round" />
+
+    <!-- 3. Subtitle Row: — by IITians — -->
+    <!-- Left Orange Bar -->
+    <line x1="90" y1="270" x2="210" y2="270" stroke="#F05000" stroke-width="11" stroke-linecap="round" />
+    
+    <!-- Text: by IITians -->
+    <text x="250" y="292" class="logo-subtitle">by IITians</text>
+    
+    <!-- Right Orange Bar -->
+    <line x1="770" y1="270" x2="890" y2="270" stroke="#F05000" stroke-width="11" stroke-linecap="round" />
+
+    <!-- 4. Tagline Row: ● One-Stop Research Solutions ● -->
+    <!-- Left Orange Bullet -->
+    <circle cx="108" cy="365" r="14" fill="#F05000" />
+    
+    <!-- Text: One-Stop Research Solutions -->
+    <text x="145" y="378" class="logo-tagline">One-Stop Research Solutions</text>
+    
+    <!-- Right Green Bullet -->
+    <circle cx="890" cy="365" r="14" fill="#0E6816" />
+
+    <!-- 5. Bottom Curved Blue Arc -->
+    <path d="M 180 405 Q 500 455 820 405" stroke="#0952C6" stroke-width="7" stroke-linecap="round" fill="none" />
+  </g>
+</svg>

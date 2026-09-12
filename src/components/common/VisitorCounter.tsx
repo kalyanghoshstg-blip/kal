@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { 
   doc, 
-  getDoc, 
   setDoc, 
   collection, 
   addDoc, 
@@ -134,40 +133,16 @@ export const VisitorCounter: React.FC<VisitorCounterProps> = ({
     // Write to Firestore database
     try {
       const counterRef = doc(db, 'analytics', 'global');
-      const snap = await getDoc(counterRef);
+      const updateData: Record<string, unknown> = {
+        visits: increment(1),
+        lastVisitedAt: now.toISOString()
+      };
 
-      if (!snap.exists()) {
-        await setDoc(counterRef, {
-          visits: 1,
-          uniqueVisitors: 1,
-          lastVisitedAt: now.toISOString(),
-          createdAt: now.toISOString()
-        });
-      } else {
-        const currentData = snap.data();
-        const curVisits = typeof currentData?.visits === 'number' ? currentData.visits : 0;
-        
-        // If document still had the old dummy 42,000+ count, reset to real starting value 1
-        if (curVisits > 10000) {
-          await setDoc(counterRef, {
-            visits: 1,
-            uniqueVisitors: 1,
-            lastVisitedAt: now.toISOString(),
-            lastResetAt: now.toISOString()
-          });
-        } else {
-          const updateData: Record<string, unknown> = {
-            visits: increment(1),
-            lastVisitedAt: now.toISOString()
-          };
-
-          if (isNewDevice) {
-            updateData.uniqueVisitors = increment(1);
-          }
-
-          await setDoc(counterRef, updateData, { merge: true });
-        }
+      if (isNewDevice) {
+        updateData.uniqueVisitors = increment(1);
       }
+
+      await setDoc(counterRef, updateData, { merge: true });
 
       // Also record to subcollection for full audit log
       const logsCol = collection(db, 'analytics', 'global', 'logs');

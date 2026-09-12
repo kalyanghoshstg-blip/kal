@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;0,900;1,800;1,900&amp;family=Plus+Jakarta+Sans:wght@700;800;900&amp;display=swap');
+      
+      .brand-title {
+        font-family: 'Montserrat', 'Arial Black', sans-serif;
+        font-weight: 900;
+        font-style: italic;
+        font-size: 155px;
+        fill: #092352;
+        letter-spacing: -3px;
+      }
+      .brand-o {
+        font-family: 'Montserrat', 'Arial Black', sans-serif;
+        font-weight: 900;
+        font-style: italic;
+        font-size: 155px;
+        fill: #F05000;
+      }
+      .by-iitians {
+        font-family: 'Plus Jakarta Sans', 'Montserrat', sans-serif;
+        font-weight: 900;
+        font-size: 68px;
+        fill: #092352;
+        letter-spacing: 0px;
+      }
+      .tagline {
+        font-family: 'Plus Jakarta Sans', 'Montserrat', sans-serif;
+        font-weight: 800;
+        font-size: 42px;
+        fill: #0F6D17;
+        letter-spacing: 0.5px;
+      }
+    </style>
+  </defs>
+
+  <g id="full-logo">
+    <!-- Top Row: Wordmark ResearchO -->
+    <!-- "Research" text -->
+    <text x="35" y="190" class="brand-title">Research</text>
+    
+    <!-- Letter "O" with graduation cap -->
+    <!-- Letter O position around X=885, Y=190 -->
+    <g transform="translate(880, 50)">
+      <!-- Orange Oval / O shape tilted italic -->
+      <!-- O outer contour -->
+      <g transform="skewX(-12)">
+        <ellipse cx="65" cy="100" rx="52" ry="62" fill="#F05000" />
+        <ellipse cx="65" cy="100" rx="26" ry="36" fill="#FFFFFF" />
+      </g>
+      
+      <!-- Graduation Cap sitting centered on top of O -->
+      <!-- Center of O is around X=50 -->
+      <g id="cap" transform="translate(5, -15)">
+        <!-- Headband / Skull cap resting on O -->
+        <path d="M 12 40 Q 52 20 92 40 L 88 48 Q 52 30 16 48 Z" fill="#092352" />
+        <path d="M 14 38 Q 52 22 90 38" stroke="#FFFFFF" stroke-width="3" fill="none" />
+        
+        <!-- Diamond Board -->
+        <!-- Center top=(52, 2), Right=(104, 26), Bottom=(52, 48), Left=(0, 26) -->
+        <polygon points="52,2 104,26 52,48 0,26" fill="#092352" />
+        <!-- Inner white outline on board -->
+        <polygon points="52,8 94,26 52,42 10,26" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round" fill="none" />
+        
+        <!-- Button/Stud -->
+        <ellipse cx="52" cy="25" rx="4" ry="2.5" fill="#FFFFFF" />
+        <ellipse cx="52" cy="25" rx="2.5" ry="1.5" fill="#092352" />
+        
+        <!-- Tassel draping to right -->
+        <path d="M 52 25 Q 85 24 98 32 Q 104 38 102 48" stroke="#092352" stroke-width="3.5" stroke-linecap="round" fill="none" />
+        <path d="M 52 25 Q 85 24 98 32 Q 104 38 102 48" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" fill="none" />
+        <circle cx="102" cy="52" r="3.5" fill="#092352" />
+        <polygon points="98,55 106,55 108,82 96,82" fill="#092352" />
+      </g>
+    </g>
+
+    <!-- Main Divider Line below ResearchO -->
+    <!-- Dark Navy line from X=20 to X=1140, Y=225 -->
+    <line x1="20" y1="225" x2="1140" y2="225" stroke="#092352" stroke-width="10" stroke-linecap="round" />
+    <!-- Orange highlight segment in middle (X=390 to X=720) -->
+    <line x1="390" y1="225" x2="720" y2="225" stroke="#F05000" stroke-width="10" stroke-linecap="round" />
+
+    <!-- Second Row: — by IITians — -->
+    <!-- Left Orange Bar -->
+    <line x1="100" y1="310" x2="230" y2="310" stroke="#F05000" stroke-width="12" stroke-linecap="round" />
+    
+    <!-- Text: by IITians -->
+    <text x="275" y="332" class="by-iitians">by IITians</text>
+    
+    <!-- Right Orange Bar -->
+    <line x1="855" y1="310" x2="985" y2="310" stroke="#F05000" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Third Row: ● One-Stop Research Solutions ● -->
+    <!-- Left Orange Bullet -->
+    <circle cx="120" cy="415" r="16" fill="#F05000" />
+    
+    <!-- Text: One-Stop Research Solutions -->
+    <text x="160" y="428" class="tagline">One-Stop Research Solutions</text>
+    
+    <!-- Right Green Bullet -->
+    <circle cx="985" cy="415" r="16" fill="#0F6D17" />
+
+    <!-- Bottom Curved Blue Arc -->
+    <path d="M 210 455 Q 550 515 890 455" stroke="#0A52CC" stroke-width="8" stroke-linecap="round" fill="none" />
+  </g>
+</svg>

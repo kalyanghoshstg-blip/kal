@@ -299,7 +299,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                   >
                     <option value="Biotechnology">Biotechnology</option>
                     <option value="Computational Drug Discovery">Computational Drug Discovery</option>
-                    <option value="Molecular Dynamics">Molecular Dynamics</option>
+                    <option value="Molecular Dynamics & Membrane Simulation">Molecular Dynamics & Membrane Simulation</option>
                     <option value="Structural Biology">Structural Biology</option>
                     <option value="Bioinformatics & Genomics">Bioinformatics & Genomics</option>
                     <option value="Molecular Biology & Primer Design">Molecular Biology & Primer Design</option>
@@ -324,7 +324,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                   className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-600 outline-hidden text-sm text-slate-900 bg-slate-50 focus:bg-white"
                 >
                   <option value="Molecular Docking / Virtual Screening Analysis">Molecular Docking / Virtual Screening Analysis</option>
-                  <option value="Molecular Dynamics (GROMACS) Simulation">Molecular Dynamics (GROMACS) Simulation</option>
+                  <option value="Molecular Dynamics & Membrane Complex Simulation">Molecular Dynamics & Membrane Complex Simulation</option>
                   <option value="Structure Solving / Density Mapping / Refinement">Structure Solving / Density Mapping / Refinement</option>
                   <option value="Bioinformatics / RNA-Seq Differential Expression">Bioinformatics / RNA-Seq Differential Expression</option>
                   <option value="Primer Design / Mutant Primer (SDM) & In Silico Cloning">Primer Design / Mutant Primer (SDM) & In Silico Cloning</option>

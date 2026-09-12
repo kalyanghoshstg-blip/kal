@@ -159,7 +159,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={() => onNavigate('services', 'molecular-dynamics')}
                   className="hover:text-blue-400 transition-colors text-left cursor-pointer"
                 >
-                  Molecular Dynamics Simulations
+                  Molecular Dynamics & Membrane Simulation
                 </button>
               </li>
               <li>

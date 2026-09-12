@@ -107,32 +107,40 @@ export const RESEARCH_SERVICES: ServiceCategory[] = [
   },
   {
     id: 'molecular-dynamics',
-    title: 'Molecular Dynamics',
-    badge: 'High-Performance Computing',
-    subtitle: 'Nanosecond to microsecond conformational trajectory analysis, stability, and free energy calculations.',
+    title: 'Molecular Dynamics (MD) & Protein-Ligand-Membrane Complex Simulation',
+    badge: 'High-Performance Computing & Membrane Biophysics',
+    subtitle: 'All-atom solvated & lipid bilayer trajectories, GPCR/transporter dynamics, and free energy calculations.',
     iconName: 'Activity',
-    description: 'Investigate dynamic conformational transitions, protein-ligand stability, allosteric pathways, and membrane transport systems using high-performance GPU-accelerated GROMACS, NAMD, and AMBER simulations.',
+    description: 'Comprehensive high-performance GPU-accelerated molecular dynamics (GROMACS, NAMD, AMBER) for solvated proteins, protein–ligand complexes, and transmembrane systems (GPCRs, ion channels, ABC transporters) embedded in realistic, multicomponent lipid bilayers.',
     servicesList: [
-      'All-atom molecular dynamics simulations (Solvated periodic boundary systems)',
-      'Protein stability & conformational flexibility analysis across trajectories',
-      'Protein–ligand complex stability, binding pose drift & residence time profiling',
-      'RMSD (Root-Mean-Square Deviation) & RMSF (Fluctuation) statistical profiling',
-      'Radius of gyration (Rg) & compactness trajectory calculations',
-      'Time-dependent Hydrogen-bond network & persistence occupancy analysis',
-      'Solvent Accessible Surface Area (SASA) dynamics & hydrophobic core exposure',
-      'Principal Component Analysis (PCA) & Free Energy Landscapes (FEL 2D/3D)',
-      'Molecular Mechanics/Poisson-Boltzmann Surface Area (MM/PBSA) binding free energy',
-      'Molecular Mechanics/Generalized Born Surface Area (MM/GBSA) free energy decomposition',
-      'Membrane protein-bilayer embedding (POPC/POPE) & lipid-protein interaction simulations',
-      'Steered molecular dynamics (SMD), targeted pulling & umbrella sampling',
-      'Markov State Modeling (MSM) & long-timescale conformational transition analysis'
+      'All-atom molecular dynamics simulations (solvated periodic boundary & explicit water systems)',
+      'Protein–ligand complex stability, binding pose drift, and residence time profiling',
+      'Explicit lipid bilayer assembly & embedding (POPC, POPE, POPG, DMPC, Cholesterol & asymmetric mixtures via CHARMM-GUI)',
+      'Membrane protein–ligand–bilayer all-atom equilibrium & microsecond-scale production MD',
+      'GPCR active/inactive state transitions, G-protein/arrestin coupling & allosteric modulation dynamics',
+      'Ion channel gating mechanisms, pore radius dynamics, and ABC transporter translocation cycles',
+      'RMSD, RMSF, Radius of Gyration (Rg), and SASA hydrophobic core exposure time-evolution',
+      'Time-dependent Hydrogen-bond persistence networks & contact occupancy profiling',
+      'Principal Component Analysis (PCA) & Free Energy Landscapes (FEL 2D/3D basin clustering)',
+      'Potential of Mean Force (PMF / Umbrella Sampling), Steered MD (SMD) & Metadynamics',
+      'Membrane biophysical parameters: Area Per Lipid (APL), order parameters (SCD), and bilayer thickness',
+      'MM/PBSA & MM/GBSA binding free energy decomposition for solvated and membrane-embedded complexes',
+      'Coarse-grained (Martini 3) multi-microsecond simulations for large-scale oligomeric membrane complexes'
     ],
-    toolsUsed: ['GROMACS', 'NAMD', 'AMBER', 'VMD', 'Bio3D', 'PyMOL', 'OriginPro', 'gmx_MMPBSA'],
+    workflowSteps: [
+      { step: '01. PREPARATION', title: 'System & Bilayer Assembly', desc: 'Topology generation, OPM orientation, CHARMM-GUI bilayer or solvated box construction & ligand parameterization.' },
+      { step: '02. EQUILIBRATION', title: 'Stepwise Relaxation', desc: 'Energy minimization followed by multi-stage NVT & NPT relaxation with gradual restraint release.' },
+      { step: '03. PRODUCTION', title: 'GPU Production MD', desc: 'GPU-accelerated unrestrained production trajectories (100 ns to 1+ μs) ensuring thermodynamic convergence.' },
+      { step: '04. TRAJECTORY & BIOPHYSICS', title: 'Conformational Analysis', desc: 'RMSD/RMSF, PCA, Free Energy Landscapes, bilayer thickness, lipid order (SCD), and contact dynamics.' },
+      { step: '05. ENERGETICS', title: 'Binding Free Energy Dossier', desc: 'MM/PBSA per-residue energy decomposition, interaction footprint heatmaps, and publication-ready 3D renders.' }
+    ],
+    toolsUsed: ['GROMACS', 'CHARMM-GUI', 'NAMD', 'AMBER', 'Martini 3', 'VMD', 'Bio3D', 'PyMOL', 'gmx_MMPBSA', 'OriginPro'],
     deliverables: [
-      'Processed Trajectory Files & Coordinate Snapshots (.xtc, .gro, .pdb)',
-      'Time-Evolution Plots (RMSD, RMSF, Rg, H-Bonds, SASA, PCA)',
-      'Free Energy Landscape (FEL) 2D/3D Contour Maps & Basin Clustering',
-      'Per-Residue Binding Free Energy Decomposition Matrix'
+      'Assembled & Equilibrated System/Bilayer Coordinate Files (.gro, .pdb, .top)',
+      'Microsecond Trajectory Snapshots & Coordinates (.xtc, .dcd)',
+      'Time-Evolution Statistical Metric Reports (RMSD, RMSF, Rg, SASA, PCA, Bilayer SCD)',
+      'Free Energy Landscape (FEL) 2D/3D Contour Maps & Energy Basin Clustering',
+      'Per-Residue MM/PBSA Binding Free Energy Decomposition Matrix & Publication Dossier'
     ]
   },
   {
@@ -817,6 +825,32 @@ export const CAREER_PROGRAMS: CareerProgram[] = [
       'Role breakdown: Computational Chemist, Bioinformatics Analyst, Clinical Data Specialist',
       'Portfolio preparation showcasing computational research projects and docking case studies',
       'Technical interview coaching on scientific methodology'
+    ]
+  },
+  {
+    id: 'cv-cover-letter',
+    title: 'Academic CV & Cover Letter Preparation',
+    category: 'CV & Cover Letter',
+    targetAudience: ['B.Sc. & M.Sc. Students', 'B.Tech & M.Tech Scholars', 'M.Pharm & PhD Candidates', 'Job Seekers'],
+    summary: 'Professional crafting of academic resumes, CVs, and statements of purpose (SOP) with structured scientific impact statements, narrative formatting, and clean layouts.',
+    keyOfferings: [
+      'Formatting and polishing of high-impact CVs aligning with global standards (US, UK, and European formats)',
+      'Structuring compelling Cover Letters that articulate scientific motivation, experimental skillsets, and research alignments',
+      'Translating laboratory experience, publications, and computational skills into structured resume impact bullets',
+      'Tailoring statement of purpose (SOP) to showcase independent research potential and critical thinking'
+    ]
+  },
+  {
+    id: 'fellowship-applications',
+    title: 'National & International PhD / Postdoc Fellowship Applications',
+    category: 'Fellowship Applications',
+    targetAudience: ['Postgraduate Scholars', 'PhD Candidates', 'Early-Career Postdocs', 'Senior Researchers'],
+    summary: 'Strategic support for planning, writing, and submitting prestigious fellowship applications to premier national and international funding bodies.',
+    keyOfferings: [
+      'National Fellowships: Guidance for PMRF (Prime Minister\'s Research Fellowship), ANRF, NPDF (National Post Doctoral Fellowship), etc.',
+      'International Fellowships: Navigation for Hungarian Stipendium, Humboldt Fellowship, Marie Skłodowska-Curie Actions (MSCA), etc.',
+      'Formulating robust research hypotheses, methodology writeups, and timeline estimations for proposals',
+      'Aligning fellowship proposals with national science initiatives and international funding agency priorities'
     ]
   }
 ];

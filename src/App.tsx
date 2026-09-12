@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
 import { ConsultationModal } from './components/common/ConsultationModal';
+import { GlobalSearchModal } from './components/common/GlobalSearchModal';
 import { FloatingActionWidget } from './components/common/FloatingActionWidget';
 import { HomePage } from './pages/HomePage';
 import { AboutView } from './components/views/AboutView';
@@ -25,17 +26,37 @@ import { PageView } from './types';
 export default function App() {
   const [currentView, setCurrentView] = useState<PageView>('home');
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [initialSearchQuery, setInitialSearchQuery] = useState('');
   const [consultationPreFill, setConsultationPreFill] = useState<{
     researchArea?: string;
     projectType?: string;
   }>({});
   const [selectedServiceId, setSelectedServiceId] = useState<string | undefined>();
 
+  // Global Ctrl+K or Cmd+K keyboard shortcut listener for search
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsSearchOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  const handleOpenSearch = (query?: string) => {
+    setInitialSearchQuery(query || '');
+    setIsSearchOpen(true);
+  };
+
   // Scroll to top or specific anchor when navigating
   const handleNavigate = (view: PageView, anchorId?: string) => {
     const serviceIds = [
       'computational-drug-discovery',
       'molecular-dynamics',
+      'protein-ligand-membrane-simulation',
       'structural-biology',
       'bioinformatics',
       'molecular-biology',
@@ -44,13 +65,17 @@ export default function App() {
       'scientific-writing',
     ];
 
-    if (serviceIds.includes(view)) {
-      setSelectedServiceId(view);
+    const targetService = (view === 'protein-ligand-membrane-simulation' || anchorId === 'protein-ligand-membrane-simulation')
+      ? 'molecular-dynamics'
+      : view;
+
+    if (serviceIds.includes(targetService)) {
+      setSelectedServiceId(targetService);
       setCurrentView('services');
-      anchorId = view;
+      anchorId = targetService;
     } else {
       if (anchorId && serviceIds.includes(anchorId)) {
-        setSelectedServiceId(anchorId);
+        setSelectedServiceId(anchorId === 'protein-ligand-membrane-simulation' ? 'molecular-dynamics' : anchorId);
       }
       setCurrentView(view);
     }
@@ -82,6 +107,7 @@ export default function App() {
         currentView={currentView} 
         onNavigate={handleNavigate} 
         onOpenConsultation={() => handleOpenConsultation()} 
+        onOpenSearch={handleOpenSearch}
       />
 
       {/* Main Content Area based on current view */}
@@ -90,6 +116,7 @@ export default function App() {
           <HomePage 
             onNavigate={handleNavigate} 
             onOpenConsultation={handleOpenConsultation} 
+            onOpenSearch={handleOpenSearch}
             initialServiceId={selectedServiceId}
           />
         )}
@@ -194,6 +221,14 @@ export default function App() {
         onClose={() => setIsConsultationOpen(false)}
         defaultResearchArea={consultationPreFill.researchArea}
         defaultProjectType={consultationPreFill.projectType}
+      />
+
+      {/* Global Interactive Search Modal */}
+      <GlobalSearchModal 
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+        onNavigate={handleNavigate}
+        initialQuery={initialSearchQuery}
       />
 
       {/* Floating Persistent Quick Contact & Consultation Widget */}
