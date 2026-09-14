@@ -37,13 +37,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="max-w-4xl mx-auto text-center space-y-6">
           
           {/* Tag / Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/20 text-cyan-300 text-xs sm:text-sm font-medium backdrop-blur-xs italic text-[14px] w-[743.891px] h-[35.2812px] justify-center">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-[17px] italic">Researcho - Connecting Researchers & Empowering Collaboration Across Research Domains</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/20 text-cyan-300 text-xs sm:text-sm font-medium backdrop-blur-xs italic text-[14px] w-full max-w-2xl min-h-[36px] h-auto justify-center mx-auto">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+            <span className="text-xs sm:text-[15px] italic leading-tight text-center">Researcho - Connecting Researchers & Empowering Collaboration Across Research Domains</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-[47.2px] leading-[63.43px] w-[960px] mx-auto text-center font-bold tracking-tight text-white">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] lg:leading-[58px] w-full max-w-4xl mx-auto text-center font-bold tracking-tight text-white px-2">
             One-Stop Research, Collaboration & Training Solutions for Life Sciences, Biotechnology, Chemistry, Pharmacy & Engineering
           </h1>
 

@@ -103,7 +103,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-900 font-sans antialiased selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen flex flex-col w-full overflow-x-hidden bg-white text-slate-900 font-sans antialiased selection:bg-blue-600 selection:text-white">
       {/* Celebration Firework Bursts (Runs for 5 seconds only) */}
       <FireworkBursts />
 
@@ -119,7 +119,7 @@ export default function App() {
       />
 
       {/* Main Content Area based on current view */}
-      <main className="flex-1">
+      <main className="flex-1 w-full overflow-x-hidden">
         {currentView === 'home' && (
           <HomePage 
             onNavigate={handleNavigate} 

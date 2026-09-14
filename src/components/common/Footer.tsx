@@ -118,12 +118,12 @@ export const Footer: React.FC<FooterProps> = ({
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
               One-Stop Research, Collaboration & Training Solutions for Life Sciences, Biotechnology, Chemistry, Pharmacy & Engineering.
             </p>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/80 border border-blue-800/60 text-[13px] text-blue-300 font-mono w-[266.234px]">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-950/80 border border-blue-800/60 text-[13px] text-blue-300 font-mono w-full max-w-[280px]">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-              <span className="text-[10px] font-bold h-[14px] w-[232.234px]">LEARN → RESEARCH → COLLABORATE → CAREER</span>
+              <span className="text-[10px] font-bold">LEARN → RESEARCH → COLLABORATE → CAREER</span>
             </div>
             
-            <div className="mt-4 p-1.5 bg-slate-900/50 border border-slate-800 rounded-lg flex gap-2.5 w-[141px]">
+            <div className="mt-4 p-1.5 bg-slate-900/50 border border-slate-800 rounded-lg flex gap-2.5 w-max max-w-full">
               <button
                 onClick={() => onNavigate('about')}
                 className="text-xs text-blue-400 hover:text-white animate-pulse font-medium"
@@ -264,7 +264,7 @@ export const Footer: React.FC<FooterProps> = ({
             </ul>
 
             {/* Total Website Visitor Counter Badge */}
-            <div className="pt-4 w-[208.5px]">
+            <div className="pt-4 w-full max-w-[210px]">
               <VisitorCounter variant="dark" className="w-full" />
             </div>
           </div>
