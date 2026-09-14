@@ -1,12 +1,92 @@
 @import "tailwindcss";
 
+/* 1. Global typography, hardware-accelerated smooth scrolling & text rendering */
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-padding-top: 80px; /* Offset for sticky navigation bar */
 }
 
-/* Sleek custom scrollbars */
+/* Enable hardware acceleration & smooth momentum scrolling on mobile and touch devices */
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+}
+
+body, button, input, select, textarea {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  text-rendering: optimizeLegibility;
+}
+
+/* GPU acceleration for fixed & sticky elements to prevent scroll jitter */
+header.sticky,
+.fixed {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* Smooth momentum scrolling and snap behavior for horizontal carousels and lists */
+.overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Prevent repaints on decorative animated background elements */
+.pointer-events-none.blur-3xl {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+/* 3. Graceful Fallback for browsers without backdrop-filter support (e.g. Windows 7 Chrome <= 75, older Safari, older mobile WebViews) */
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  /* Sticky header: ensure 100% solid white background without fading or translucency */
+  header.sticky {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+
+  /* Modal backdrops without blur: solid dark overlay for high readability */
+  .fixed.inset-0[class*="backdrop-blur"] {
+    background-color: rgba(15, 23, 42, 0.85) !important;
+  }
+
+  /* Reset unsupported blur filters */
+  [class*="backdrop-blur-xs"],
+  [class*="backdrop-blur-sm"],
+  [class*="backdrop-blur-md"],
+  [class*="backdrop-blur-lg"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Translucent badges and banner cards fallback to solid contrasting backgrounds */
+  .bg-white\/5 {
+    background-color: #1e293b !important;
+  }
+  .bg-blue-500\/10 {
+    background-color: #1e3a5f !important;
+  }
+  .bg-slate-900\/70,
+  .bg-slate-900\/60,
+  .bg-slate-950\/70,
+  .bg-slate-950\/80 {
+    background-color: #0f172a !important;
+  }
+}
+
+/* 4. Graceful Fallback for mix-blend-mode */
+@supports not (mix-blend-mode: multiply) {
+  .mix-blend-multiply {
+    mix-blend-mode: normal !important;
+  }
+}
+
+/* 5. Sleek custom scrollbars with solid fallbacks */
 .custom-scrollbar::-webkit-scrollbar {
   height: 6px;
   width: 6px;
@@ -28,14 +108,28 @@ html {
   height: 5px;
 }
 .dark-scrollbar::-webkit-scrollbar-track {
-  background: rgba(30, 41, 59, 0.6);
+  background: #1e293b;
   border-radius: 9999px;
 }
 .dark-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.7);
+  background: #64748b;
   border-radius: 9999px;
 }
 .dark-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.9);
+  background: #94a3b8;
 }
 
+/* 6. Accessibility & Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

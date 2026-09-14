@@ -97,7 +97,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       onClick={() => onOpenSearch()}
       className={`group relative flex items-center justify-center px-3 py-1.5 rounded-xl bg-yellow-100 border border-yellow-300 text-yellow-900 font-bold shadow-xs animate-pulse hover:animate-none hover:bg-yellow-200 active:scale-95 transition-all cursor-pointer ${className}`}
       title="Search (Ctrl+K)"
-      aria-label="Search Researcho"
+      aria-label="Search Researcho by IITians"
     >
       <Search className="w-4 h-4 transition-transform group-hover:scale-110 text-yellow-800" />
       <span className="ml-1.5 text-xs font-bold text-yellow-900">

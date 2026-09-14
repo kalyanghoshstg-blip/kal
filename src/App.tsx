@@ -86,11 +86,19 @@ export default function App() {
       setTimeout(() => {
         const element = document.getElementById(anchorId);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          try {
+            element.scrollIntoView({ behavior: 'smooth' });
+          } catch {
+            element.scrollIntoView();
+          }
         }
       }, 100);
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      try {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch {
+        window.scrollTo(0, 0);
+      }
     }
   };
 

@@ -36,7 +36,7 @@
   </defs>
 
   <g id="full-logo">
-    <!-- Top Row: Wordmark ResearchO -->
+    <!-- Top Row: Wordmark Researcho -->
     <!-- "Research" text -->
     <text x="35" y="190" class="brand-title">Research</text>
     
@@ -75,7 +75,7 @@
       </g>
     </g>
 
-    <!-- Main Divider Line below ResearchO -->
+    <!-- Main Divider Line below Researcho -->
     <!-- Dark Navy line from X=20 to X=1140, Y=225 -->
     <line x1="20" y1="225" x2="1140" y2="225" stroke="#092352" stroke-width="10" stroke-linecap="round" />
     <!-- Orange highlight segment in middle (X=390 to X=720) -->

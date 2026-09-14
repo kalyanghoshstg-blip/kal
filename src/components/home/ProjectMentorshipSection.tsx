@@ -137,7 +137,7 @@ export const ProjectMentorshipSection: React.FC<ProjectMentorshipSectionProps> =
                 </span>
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Researcho operates strictly under the model of <strong className="text-cyan-300 font-semibold">Mentorship + Practical Training + Data Analysis Support</strong>. We empower students to learn the underlying science and perform computational workflows themselves — we do not complete or ghostwrite students' graded academic assessments.
+                Researcho by IITians operates strictly under the model of <strong className="text-cyan-300 font-semibold">Mentorship + Practical Training + Data Analysis Support</strong>. We empower students to learn the underlying science and perform computational workflows themselves — we do not complete or ghostwrite students' graded academic assessments.
               </p>
             </div>
           </div>

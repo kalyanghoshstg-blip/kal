@@ -24,13 +24,32 @@ interface Spark {
 
 export const FireworkBursts: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const [isActive, setIsActive] = React.useState(() => {
+    if (typeof window === 'undefined') return false;
+    // Check for reduced motion preference
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return false;
+    }
+    // Check for mix-blend-mode support to avoid fading/dimming on older devices
+    if (window.CSS && typeof window.CSS.supports === 'function') {
+      if (!window.CSS.supports('mix-blend-mode', 'screen')) {
+        return false;
+      }
+    }
+    return true;
+  });
 
   useEffect(() => {
+    if (!isActive) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    if (!ctx) {
+      setIsActive(false);
+      return;
+    }
 
     // Handle high-DPI displays
     const resizeCanvas = () => {
@@ -137,6 +156,7 @@ export const FireworkBursts: React.FC = () => {
       if (ctx && canvas) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
       }
+      setIsActive(false);
     }, 10000);
 
     return () => {
@@ -146,7 +166,9 @@ export const FireworkBursts: React.FC = () => {
       clearTimeout(endTimeout);
       cancelAnimationFrame(animationId);
     };
-  }, []);
+  }, [isActive]);
+
+  if (!isActive) return null;
 
   return (
     <canvas

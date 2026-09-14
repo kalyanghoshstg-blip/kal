@@ -184,7 +184,7 @@ export const AcademySection: React.FC<AcademySectionProps> = ({
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                   <button
-                    onClick={() => onNavigate('courses')}
+                    onClick={() => onNavigate('training')}
                     className="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-medium text-xs border border-slate-700 transition-colors cursor-pointer"
                   >
                     Explore All Courses

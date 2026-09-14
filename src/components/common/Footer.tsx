@@ -275,7 +275,7 @@ export const Footer: React.FC<FooterProps> = ({
               <span className="w-1.5 h-1.5 rounded-full bg-sky-500" />
               Quick Links
             </h3>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2 text-xs font-serif [font-family:'Times_New_Roman',Times,serif]">
               <li>
                 <button
                   onClick={() => onNavigate('career-guidance', 'academic-guidance')}
@@ -313,7 +313,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={() => onNavigate('about')}
                   className="hover:text-blue-400 transition-colors text-left cursor-pointer"
                 >
-                  About Researcho
+                  About Researcho by IITians
                 </button>
               </li>
               <li>

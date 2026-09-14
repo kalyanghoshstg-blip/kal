@@ -26,7 +26,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onOpenSearch,
 }) => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-blue-950 to-slate-900 text-white pt-10 pb-12 lg:pt-14 lg:pb-16">
+    <section className="relative overflow-hidden bg-slate-900 bg-gradient-to-b from-slate-900 via-blue-950 to-slate-900 text-white pt-10 pb-12 lg:pt-14 lg:pb-16">
       {/* Background Molecular Grid & Glow Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px] opacity-15" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-500/15 rounded-full blur-3xl pointer-events-none" />
@@ -37,9 +37,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="max-w-4xl mx-auto text-center space-y-6">
           
           {/* Tag / Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/20 text-cyan-300 text-xs sm:text-sm font-medium backdrop-blur-xs italic text-[14px] w-full max-w-2xl min-h-[36px] h-auto justify-center mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/20 text-cyan-300 text-xs sm:text-sm font-medium backdrop-blur-xs italic text-[14px] w-full max-w-[686px] min-h-[36px] h-auto justify-center mx-auto">
             <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-            <span className="text-xs sm:text-[15px] italic leading-tight text-center">Researcho - Connecting Researchers & Empowering Collaboration Across Research Domains</span>
+            <span className="text-[13px] italic leading-tight text-center">Researcho by IITians - Connecting Researchers & Empowering Collaboration Across Research Domains</span>
           </div>
 
           {/* Main Headline */}
@@ -132,7 +132,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
             <div className="flex items-center gap-2 justify-center">
               <Clock className="w-4 h-4 text-sky-400 shrink-0" />
-              <span>24x7</span>
+              <span>24x7 Mentor Support</span>
             </div>
           </div>
 

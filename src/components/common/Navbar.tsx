@@ -40,8 +40,12 @@ export const Navbar: React.FC<NavbarProps> = ({
     let ticking = false;
     const handleScroll = () => {
       if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const currentY = window.scrollY;
+        const raf = window.requestAnimationFrame || ((cb: FrameRequestCallback) => setTimeout(cb, 16));
+        raf(() => {
+          const currentY =
+            typeof window.scrollY !== 'undefined'
+              ? window.scrollY
+              : (window.pageYOffset || document.documentElement.scrollTop || 0);
           // Apply hysteresis and robust threshold to prevent rapid fluctuation / jitter near threshold
           setIsScrolled((prev) => {
             if (!prev && currentY > 60) return true;
@@ -66,10 +70,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header
-      className={`sticky top-0 z-40 w-full transition-all duration-300 ease-in-out ${
+      className={`sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md transition-all duration-300 ease-in-out border-b ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/80 py-1'
-          : 'bg-white border-b border-slate-100 py-2 sm:py-3'
+          ? 'shadow-sm border-slate-200/80 py-0.5'
+          : 'border-slate-100 py-1 sm:py-2'
       }`}
     >
       <div className="w-full px-3 sm:px-5 lg:px-6">
@@ -81,18 +85,18 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Logo */}
           <div
             onClick={() => handleNavClick('home')}
-            className="cursor-pointer hover:opacity-95 flex items-center shrink-0 -ml-1 sm:-ml-2 transition-transform duration-300 ease-in-out origin-left"
+            className="cursor-pointer hover:opacity-95 flex items-center shrink-0 -ml-1 sm:-ml-2 origin-left transition-all duration-300 ease-in-out"
           >
             <BrandLogo variant="compact" size={isScrolled ? 'sm' : 'md'} />
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden xl:flex items-center space-x-1 2xl:space-x-2">
+          <nav className="hidden xl:flex items-center space-x-1 2xl:space-x-2 text-[13px] leading-[20px]">
             <button
               onClick={() => handleNavClick('home')}
-              className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
+              className={`px-3 py-1.5 text-[13px] leading-[20px] font-bold rounded-lg transition-colors cursor-pointer ${
                 currentView === 'home'
-                  ? 'text-blue-600 bg-blue-50 font-semibold'
+                  ? 'text-blue-600 bg-blue-50'
                   : 'text-slate-700 hover:text-blue-600 hover:bg-slate-50'
               }`}
             >
@@ -101,15 +105,15 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* Research Services Dropdown */}
             <div
-              className="relative"
+              className="relative text-[13px] leading-[20px] font-bold"
               onMouseEnter={() => setServicesDropdownOpen(true)}
               onMouseLeave={() => setServicesDropdownOpen(false)}
             >
               <button
                 onClick={() => handleNavClick('services')}
-                className={`flex items-center gap-1 px-3 py-1.5 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
+                className={`flex items-center gap-1 px-3 py-1.5 text-[13px] leading-[20px] font-bold rounded-lg transition-colors cursor-pointer ${
                   currentView === 'services' || currentView === 'computational-drug-discovery' || currentView === 'molecular-dynamics' || currentView === 'protein-ligand-membrane-simulation' || currentView === 'bioinformatics' || currentView === 'molecular-biology' || currentView === 'chemistry' || currentView === 'medicinal-chemistry' || currentView === 'scientific-writing'
-                    ? 'text-blue-600 bg-blue-50 font-semibold'
+                    ? 'text-blue-600 bg-blue-50'
                     : 'text-slate-700 hover:text-blue-600 hover:bg-slate-50'
                 }`}
               >
@@ -119,53 +123,53 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               {servicesDropdownOpen && (
                 <div className="absolute left-0 top-full pt-1 w-72 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-                  <div className="bg-white rounded-xl shadow-lg border border-slate-200/80 p-1.5 text-sm space-y-0.5">
+                  <div className="bg-white rounded-xl shadow-lg border border-slate-200/80 p-1.5 text-[13px] leading-[20px] space-y-0.5">
                     <button
                       onClick={() => handleNavClick('services', 'computational-drug-discovery')}
-                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 flex items-center justify-between group cursor-pointer transition-colors"
+                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 flex items-center justify-between group cursor-pointer transition-colors text-[13px] leading-[20px]"
                     >
-                      <span className="font-medium text-xs">Computational Drug Discovery</span>
-                      <span className="text-[10px] bg-blue-50 text-blue-700 border border-blue-200/60 px-1.5 py-0.5 rounded font-semibold">Flagship</span>
+                      <span className="font-semibold text-[13px] leading-[20px]">Computational Drug Discovery</span>
+                      <span className="text-[10px] leading-normal bg-blue-50 text-blue-700 border border-blue-200/60 px-1.5 py-0.5 rounded font-bold">Flagship</span>
                     </button>
                     <button
                       onClick={() => handleNavClick('services', 'molecular-dynamics')}
-                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-xs font-medium cursor-pointer transition-colors"
+                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-[13px] leading-[20px] font-semibold cursor-pointer transition-colors"
                     >
                       Molecular Dynamics & Membrane Simulation
                     </button>
                     <button
                       onClick={() => handleNavClick('services', 'structural-biology')}
-                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-xs font-medium cursor-pointer transition-colors"
+                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-[13px] leading-[20px] font-semibold cursor-pointer transition-colors"
                     >
                       Structural Biology
                     </button>
                     <button
                       onClick={() => handleNavClick('services', 'bioinformatics')}
-                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-xs font-medium cursor-pointer transition-colors"
+                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-[13px] leading-[20px] font-semibold cursor-pointer transition-colors"
                     >
                       Bioinformatics & Multi-Omics
                     </button>
                     <button
                       onClick={() => handleNavClick('services', 'molecular-biology')}
-                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-xs font-medium cursor-pointer transition-colors"
+                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-[13px] leading-[20px] font-semibold cursor-pointer transition-colors"
                     >
                       Molecular Biology & Primer Design
                     </button>
                     <button
                       onClick={() => handleNavClick('services', 'chemistry')}
-                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-xs font-medium cursor-pointer transition-colors"
+                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-[13px] leading-[20px] font-semibold cursor-pointer transition-colors"
                     >
                       Chemistry & NMR Analytics
                     </button>
                     <button
                       onClick={() => handleNavClick('services', 'medicinal-chemistry')}
-                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-xs font-medium cursor-pointer transition-colors"
+                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-[13px] leading-[20px] font-semibold cursor-pointer transition-colors"
                     >
                       Medicinal Chemistry & Drug Design
                     </button>
                     <button
                       onClick={() => handleNavClick('services', 'scientific-writing')}
-                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-xs font-medium cursor-pointer transition-colors"
+                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-[13px] leading-[20px] font-semibold cursor-pointer transition-colors"
                     >
                       Scientific Writing & Publication
                     </button>
@@ -176,15 +180,15 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* Training & Courses Dropdown */}
             <div
-              className="relative"
+              className="relative text-[13px] leading-[20px] font-bold"
               onMouseEnter={() => setTrainingDropdownOpen(true)}
               onMouseLeave={() => setTrainingDropdownOpen(false)}
             >
               <button
                 onClick={() => handleNavClick('training')}
-                className={`flex items-center gap-1 px-3 py-1.5 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
+                className={`flex items-center gap-1 px-3 py-1.5 text-[13px] leading-[20px] font-bold rounded-lg transition-colors cursor-pointer ${
                   currentView === 'training'
-                    ? 'text-blue-600 bg-blue-50 font-semibold'
+                    ? 'text-blue-600 bg-blue-50'
                     : 'text-slate-700 hover:text-blue-600 hover:bg-slate-50'
                 }`}
               >
@@ -194,22 +198,22 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               {trainingDropdownOpen && (
                 <div className="absolute left-0 top-full pt-1 w-64 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-                  <div className="bg-white rounded-xl shadow-lg border border-slate-200/80 p-1.5 text-sm space-y-0.5">
+                  <div className="bg-white rounded-xl shadow-lg border border-slate-200/80 p-1.5 text-[13px] leading-[20px] space-y-0.5">
                     <button
                       onClick={() => handleNavClick('training', 'featured-course')}
                       className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 flex items-center justify-between cursor-pointer transition-colors"
                     >
-                      <span className="font-medium text-xs">Featured: Molecular Docking</span>
+                      <span className="font-semibold text-[13px] leading-[20px]">Featured: Molecular Docking</span>
                     </button>
                     <button
                       onClick={() => handleNavClick('training', 'advanced-courses')}
-                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-xs font-medium cursor-pointer transition-colors"
+                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-[13px] leading-[20px] font-semibold cursor-pointer transition-colors"
                     >
                       Advanced Masterclasses
                     </button>
                     <button
                       onClick={() => handleNavClick('training', 'workshops-section')}
-                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-xs font-medium cursor-pointer transition-colors"
+                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 text-[13px] leading-[20px] font-semibold cursor-pointer transition-colors"
                     >
                       Hands-on Weekend Workshops
                     </button>
@@ -220,7 +224,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => handleNavClick('mentors', 'mentors')}
-              className={`px-3.5 py-1.5 text-[15px] 2xl:text-base font-bold rounded-lg transition-colors cursor-pointer inline-flex items-center gap-2 ${
+              className={`px-3.5 py-1.5 text-[13px] leading-[20px] font-bold rounded-lg transition-colors cursor-pointer inline-flex items-center gap-2 ${
                 currentView === 'mentors'
                   ? 'text-blue-600 bg-blue-50'
                   : 'text-blue-600 hover:text-blue-700 hover:bg-blue-50/60'
@@ -235,9 +239,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => handleNavClick('collaboration')}
-              className={`px-3 py-1.5 text-sm font-bold rounded-lg transition-colors cursor-pointer inline-flex items-center gap-2 ${
+              className={`px-3 py-1.5 text-[13px] leading-[20px] font-bold rounded-lg transition-colors cursor-pointer inline-flex items-center gap-2 ${
                 currentView === 'collaboration'
-                  ? 'text-blue-600 bg-blue-50 font-semibold'
+                  ? 'text-blue-600 bg-blue-50'
                   : 'text-blue-700 hover:text-blue-800 hover:bg-blue-50/70'
               }`}
             >
@@ -250,9 +254,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => handleNavClick('webinars')}
-              className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
+              className={`px-3 py-1.5 text-[13px] leading-[20px] font-bold rounded-lg transition-colors cursor-pointer ${
                 currentView === 'webinars'
-                  ? 'text-blue-600 bg-blue-50 font-semibold'
+                  ? 'text-blue-600 bg-blue-50'
                   : 'text-slate-700 hover:text-blue-600 hover:bg-slate-50'
               }`}
             >
@@ -261,9 +265,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => handleNavClick('career-guidance')}
-              className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
+              className={`px-3 py-1.5 text-[13px] leading-[20px] font-bold rounded-lg transition-colors cursor-pointer ${
                 currentView === 'career-guidance'
-                  ? 'text-blue-600 bg-blue-50 font-semibold'
+                  ? 'text-blue-600 bg-blue-50'
                   : 'text-slate-700 hover:text-blue-600 hover:bg-slate-50'
               }`}
             >
@@ -272,9 +276,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => handleNavClick('resources')}
-              className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
+              className={`px-3 py-1.5 text-[13px] leading-[20px] font-bold rounded-lg transition-colors cursor-pointer ${
                 currentView === 'resources'
-                  ? 'text-blue-600 bg-blue-50 font-semibold'
+                  ? 'text-blue-600 bg-blue-50'
                   : 'text-slate-700 hover:text-blue-600 hover:bg-slate-50'
               }`}
             >
@@ -283,9 +287,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => handleNavClick('about')}
-              className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
+              className={`px-3 py-1.5 text-[13px] leading-[20px] font-bold rounded-lg transition-colors cursor-pointer ${
                 currentView === 'about'
-                  ? 'text-blue-600 bg-blue-50 font-semibold'
+                  ? 'text-blue-600 bg-blue-50'
                   : 'text-slate-700 hover:text-blue-600 hover:bg-slate-50'
               }`}
             >
@@ -294,9 +298,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => handleNavClick('contact')}
-              className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
+              className={`px-3 py-1.5 text-[13px] leading-[20px] font-bold rounded-lg transition-colors cursor-pointer ${
                 currentView === 'contact'
-                  ? 'text-blue-600 bg-blue-50 font-semibold'
+                  ? 'text-blue-600 bg-blue-50'
                   : 'text-slate-700 hover:text-blue-600 hover:bg-slate-50'
               }`}
             >

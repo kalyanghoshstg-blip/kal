@@ -399,7 +399,7 @@ export const FoundingMembersSection: React.FC<FoundingMembersSectionProps> = ({
                 </div>
 
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-3xl">
-                  Leading strategic marketing campaigns, academic partnerships, and interactive international webinar series at Researcho. Driving global researcher engagement while contributing deep technical expertise in RF antennas, metamaterials, and wireless healthcare sensors.
+                  Leading strategic marketing campaigns, academic partnerships, and interactive international webinar series at Researcho by IITians. Driving global researcher engagement while contributing deep technical expertise in RF antennas, metamaterials, and wireless healthcare sensors.
                 </p>
 
                 {/* Core Research Specializations Pills */}

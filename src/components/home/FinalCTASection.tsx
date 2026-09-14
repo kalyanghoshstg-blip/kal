@@ -12,7 +12,7 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
   onOpenConsultation,
 }) => {
   return (
-    <section className="py-10 sm:py-14 bg-slate-900 text-white relative border-t border-slate-800">
+    <section className="py-10 sm:py-14 bg-slate-900 text-white text-sm relative border-t border-slate-800 [font-family:system-ui]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-blue-400 text-xs font-medium mb-4">

@@ -39,7 +39,7 @@ export const ContactView: React.FC = () => {
           'Accept': 'application/json',
         },
         body: JSON.stringify({
-          _subject: `New Inquiry from ${formData.name} - Researcho Website`,
+          _subject: `New Inquiry from ${formData.name} - Researcho by IITians Website`,
           Name: formData.name,
           Email: formData.email,
           Phone: formData.phone,
@@ -73,7 +73,7 @@ export const ContactView: React.FC = () => {
             Get in Touch With IITian Mentors
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
-            Contact Researcho
+            Contact Researcho by IITians
           </h1>
           <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
             Have questions about our research services, training masterclasses, workshops, or career guidance programs? Reach out to our scientific advisory team.
@@ -112,7 +112,7 @@ export const ContactView: React.FC = () => {
                     <div className="text-xs font-medium uppercase tracking-wider text-slate-400">WhatsApp & Quick Desk</div>
                     <div className="flex flex-col gap-1.5 mt-1">
                       <a 
-                        href="https://wa.me/918250573407?text=Hello%20Researcho,%20I%20would%20like%20to%20discuss%20research%20services%20and%20consultation." 
+                        href="https://wa.me/918250573407?text=Hello%20Researcho%20by%20IITians,%20I%20would%20like%20to%20discuss%20research%20services%20and%20consultation." 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-sm font-semibold text-emerald-700 hover:text-emerald-800 underline transition-colors flex items-center gap-1.5"
@@ -120,7 +120,7 @@ export const ContactView: React.FC = () => {
                         <span>+91 82505 73407</span>
                       </a>
                       <a 
-                        href="https://wa.me/919063751838?text=Hello%20Researcho,%20I%20would%20like%20to%20discuss%20research%20services%20and%20consultation." 
+                        href="https://wa.me/919063751838?text=Hello%20Researcho%20by%20IITians,%20I%20would%20like%20to%20discuss%20research%20services%20and%20consultation." 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-sm font-semibold text-emerald-700 hover:text-emerald-800 underline transition-colors flex items-center gap-1.5"
@@ -128,7 +128,7 @@ export const ContactView: React.FC = () => {
                         <span>+91 90637 51838</span>
                       </a>
                       <a 
-                        href="https://wa.me/918349572145?text=Hello%20Researcho,%20I%20would%20like%20to%20discuss%20research%20services%20and%20consultation." 
+                        href="https://wa.me/918349572145?text=Hello%20Researcho%20by%20IITians,%20I%20would%20like%20to%20discuss%20research%20services%20and%20consultation." 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-sm font-semibold text-emerald-700 hover:text-emerald-800 underline transition-colors flex items-center gap-1.5"
@@ -194,7 +194,7 @@ export const ContactView: React.FC = () => {
                   Inquiry Received Successfully!
                 </h3>
                 <p className="text-sm text-slate-600 max-w-md mx-auto">
-                  Thank you for reaching out to Researcho. Your message has been sent directly to <strong className="text-slate-900">contact@researcho-by-iitians.in</strong>. You can also open your mail client directly below:
+                  Thank you for reaching out to Researcho by IITians. Your message has been sent directly to <strong className="text-slate-900">contact@researcho-by-iitians.in</strong>. You can also open your mail client directly below:
                 </p>
                 <div className="max-w-md mx-auto space-y-2 pt-2">
                   <a

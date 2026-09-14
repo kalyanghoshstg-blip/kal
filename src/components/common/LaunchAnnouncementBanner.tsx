@@ -49,7 +49,11 @@ export const LaunchAnnouncementBanner: React.FC = () => {
             e.preventDefault();
             const academySec = document.getElementById('academy-section') || document.getElementById('featured-course');
             if (academySec) {
-              academySec.scrollIntoView({ behavior: 'smooth' });
+              try {
+                academySec.scrollIntoView({ behavior: 'smooth' });
+              } catch {
+                academySec.scrollIntoView();
+              }
             }
           }}
           className="text-[11px] sm:text-xs font-bold text-white underline hover:text-amber-300 transition-colors cursor-pointer"
