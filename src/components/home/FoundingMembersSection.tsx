@@ -37,6 +37,8 @@ import kalyanRegImage from '../../assets/images/regenerated_image_1787810289863.
 import regAnanyaImg from '../../assets/images/regenerated_image_1787810295222.png';
 import drSubhashisMImg from '../../assets/images/regenerated_image_1787810299659.png';
 import drPremPalSinghImg from '../../assets/images/regenerated_image_1787814909685.png';
+import nishantRegImage from '../../assets/images/nishant_ranjan_avatar_1789306713313.jpg';
+import biswadipAvatarImg from '../../assets/images/regenerated_image_1789354049254.png';
 import { PageView } from '../../types';
 
 interface FoundingMembersSectionProps {
@@ -159,181 +161,32 @@ export const FOUNDING_MENTORS: MentorProfile[] = [
 ];
 
 export const DOMAIN_MENTORS_DATA: DomainMentor[] = [
-  // 1. Global Mentors
+  // 1. National Mentors (Verified)
   {
-    id: 'dm-global-1',
-    name: 'Dr. Kalyan Ghosh',
-    degrees: 'PhD (IIT Guwahati)',
-    affiliation: 'Postdoctoral Fellow, University of British Columbia (UBC), Canada',
+    id: 'dm-nat-nishant',
+    name: 'Mr. Nishant Ranjan',
+    degrees: 'PhD Scholar (IISER Berhampur) • M.Tech (IIT Hyderabad)',
+    affiliation: 'IISER Berhampur • M.Tech Alumnus IIT Hyderabad',
     domain: 'Structural Biology & Cryo-EM',
-    category: 'Global Mentors',
-    badge: 'UBC Canada & CIHR Fellow',
-    specialization: 'Membrane Protein Biology & Cryo-EM Structural Discovery',
-    expertisePills: ['Cryo-EM', 'UBC Canada', 'CIHR Fellow', 'Antimicrobial Resistance'],
-    bio: 'CIRTA 2026 Fellow at UBC Vancouver specializing in cryo-EM structure determination of cardiac transporters and antimicrobial resistance targets.',
-    image: kalyanRegImage
-  },
-  {
-    id: 'dm-global-2',
-    name: 'Dr. Sayan Das',
-    degrees: 'PhD (IIT Bombay)',
-    affiliation: 'Postdoctoral Research Associate, Harvard Medical School & Broad Institute, USA',
-    domain: 'Computational Genomics',
-    category: 'Global Mentors',
-    badge: 'Harvard & Broad Inst.',
-    specialization: 'Single-Cell Transcriptomics & Functional Genomics',
-    expertisePills: ['Harvard HMS', 'Single-Cell RNA', 'Broad Institute', 'CRISPR Screen'],
-    bio: 'Leads computational pipelines for single-cell multi-omics sequencing datasets, cell-type clustering, and spatial transcriptomics at Harvard.',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'
-  },
-  {
-    id: 'dm-global-3',
-    name: 'Dr. Elena Rostova',
-    degrees: 'PhD (ETH Zurich)',
-    affiliation: 'Senior Researcher, Max Planck Institute of Biophysics, Germany',
-    domain: 'Biophysics & MD Simulation',
-    category: 'Global Mentors',
-    badge: 'Max Planck (Germany)',
-    specialization: 'Microsecond All-Atom Dynamics & Free Energy Landscapes',
-    expertisePills: ['Max Planck', 'GROMACS', 'FEP Simulations', 'Ion Channels'],
-    bio: 'Pioneer in membrane biophysics and high-performance computing simulations of ion channel gating mechanisms.',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80'
-  },
-
-  // 2. National Mentors
-  {
-    id: 'dm-nat-1',
-    name: 'Dr. Dipayan Mondal',
-    degrees: 'PhD (IIT Hyderabad)',
-    affiliation: 'Parul University • Former PMRF Fellow (IIT Hyderabad)',
-    domain: 'Medicinal Chemistry',
     category: 'National Mentors',
-    badge: 'PMRF Fellow (Govt. of India)',
-    specialization: 'Targeted Protein Degradation & Organic Synthesis',
-    expertisePills: ['IIT Hyderabad', 'PMRF Fellow', 'Medicinal Chem', 'NMR & DFT'],
-    bio: 'PMRF Scholar focusing on functional organic molecules, targeted protein degradation mechanisms, and novel lead drug discovery.',
-    image: regAnanyaImg
+    badge: 'IISER Berhampur • IIT Hyderabad',
+    specialization: 'Structural Biology, Protein Biochemistry, Molecular Biology & Biophysical Characterization of Proteins, Protein–Ligand / Protein–Protein Interactions',
+    expertisePills: ['Structural Biology', 'Protein Biochemistry', 'Cryo-EM', 'Protein–Ligand Interactions', 'Biophysical Characterization', 'Drug Discovery', 'IIT Hyderabad', 'IISER Berhampur'],
+    bio: 'Completed M.Tech in Medical Biotechnology at IIT Hyderabad with research in molecular biology, protein biochemistry, and structural biology. Currently pursuing PhD at IISER Berhampur, focusing on structural biology and drug discovery with an emphasis on understanding protein structure, function, and molecular interactions using biochemical, biophysical, and structural biology approaches.',
+    image: nishantRegImage
   },
   {
-    id: 'dm-nat-2',
-    name: 'Dr. Hanuman Singh Dagur',
-    degrees: 'PhD (IIT Hyderabad)',
-    affiliation: 'IIT Hyderabad • Former Asst. Professor JNU',
-    domain: 'Molecular Biology',
+    id: 'dm-nat-biswadip',
+    name: 'Mr. Biswadip Chakraborty',
+    degrees: 'PhD Scholar (DST INSPIRE Fellow) • M.Pharm (Gold Medalist)',
+    affiliation: 'CSIR-Indian Institute of Chemical Biology (CSIR-IICB)',
+    domain: 'Medicinal & Organic Chemistry',
     category: 'National Mentors',
-    badge: 'PMRF Fellow (Govt. of India)',
-    specialization: 'Protein-Nucleic Acid Interactions & Catalytic Mechanisms',
-    expertisePills: ['Biotechnology', 'IIT Hyderabad', 'Enzyme Catalysis', 'Primer Design'],
-    bio: 'Biotechnology specialist investigating enzyme active-site architecture, molecular regulation, and protein-DNA recognition.',
-    image: drSubhashisMImg
-  },
-  {
-    id: 'dm-nat-3',
-    name: 'Dr. Priyadarshini Mukherjee',
-    degrees: 'PhD (IISc Bangalore)',
-    affiliation: 'IISc Bangalore • Structural Virology Lead',
-    domain: 'Structural Biology',
-    category: 'National Mentors',
-    badge: 'IISc Alumna',
-    specialization: 'Single-Particle Cryo-EM & Viral Glycoprotein Modeling',
-    expertisePills: ['IISc Bangalore', 'Cryo-EM Map', 'Relion', 'Virology'],
-    bio: 'Directs atomic resolution structure refinement, cryo-EM map fitting, and neutralizing antibody interaction modeling at IISc.',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80'
-  },
-  {
-    id: 'dm-nat-4',
-    name: 'Dr. Abhijit Das',
-    degrees: 'PhD (IIT Madras)',
-    affiliation: 'IIT Madras • Computational Enzymology Group',
-    domain: 'Quantum Chemistry',
-    category: 'National Mentors',
-    badge: 'IIT Madras Alumnus',
-    specialization: 'QM/MM Catalytic Reactions & Gaussian DFT Modeling',
-    expertisePills: ['IIT Madras', 'QM/MM', 'Gaussian DFT', 'Enzymology'],
-    bio: 'Leads hybrid quantum mechanical / molecular mechanical investigations into catalytic reaction pathways of novel industrial enzymes.',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80'
-  },
-
-  // 3. R&D & Industry Specialists
-  {
-    id: 'dm-ind-1',
-    name: 'Dr. Sourav Bhattacharya',
-    degrees: 'M.Pharm., PhD (NIPER Mohali)',
-    affiliation: 'Senior Formulation Scientist, Sun Pharma R&D',
-    domain: 'Pharmaceutics & Nano-Formulation',
-    category: 'R&D & Industry Specialists',
-    badge: 'Sun Pharma R&D',
-    specialization: 'Lipid Nanoparticles (LNPs) & Targeted Drug Delivery Systems',
-    expertisePills: ['NIPER Mohali', 'LNPs Nanomedicine', 'PK/PD Studies', 'Scale-up R&D'],
-    bio: 'Guides industrial scale formulation optimization of lipid nanocarriers and targeted nanomedicines for oncology applications.',
-    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80'
-  },
-  {
-    id: 'dm-ind-2',
-    name: 'Dr. Rajesh V. Raman',
-    degrees: 'PhD (ICT Mumbai)',
-    affiliation: 'VP of Chemoinformatics, BioPharma Therapeutics R&D',
-    domain: 'Chemoinformatics & AI',
-    category: 'R&D & Industry Specialists',
-    badge: 'Pharma R&D VP',
-    specialization: 'AI-Driven High-Throughput Virtual Screening & ADMET Lead Discovery',
-    expertisePills: ['ICT Mumbai', 'AI Drug Discovery', 'HTVS Screening', 'ADMET Profiling'],
-    bio: 'Heading computational chemistry teams using deep learning models for hit-to-lead molecular generation and SAR optimization.',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80'
-  },
-  {
-    id: 'dm-ind-3',
-    name: 'Dr. Meera Nambiar',
-    degrees: 'PhD (BITS Pilani)',
-    affiliation: 'Head of Bioanalytical Spectroscopy, Syngene International',
-    domain: 'Analytical Chemistry',
-    category: 'R&D & Industry Specialists',
-    badge: 'Syngene CRO',
-    specialization: 'LC-MS/MS Method Development & NMR Spectral Analytics',
-    expertisePills: ['BITS Pilani', 'LC-MS/MS', 'NMR Bioanalytics', 'Regulatory Validation'],
-    bio: 'Expert in small molecule characterization, bioanalytical protocol validation, and regulatory dossier compliance for global CROs.',
-    image: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=600&q=80'
-  },
-
-  // 4. Government & Public Sector Experts
-  {
-    id: 'dm-gov-1',
-    name: 'Dr. Debanjan Sarkar',
-    degrees: 'PhD (IIT Kharagpur)',
-    affiliation: 'CSIR-CDRI Collaborator • PMRF Scholar (Ministry of Education)',
-    domain: 'Computational Biophysics',
-    category: 'Government & Public Sector Experts',
-    badge: 'CSIR & PMRF Govt. India',
-    specialization: 'Membrane Protein Dynamics & Public Health Antimicrobial Targets',
-    expertisePills: ['Ministry of Education', 'CSIR-CDRI', 'IIT Kharagpur', 'Antimicrobial R&D'],
-    bio: 'Focuses on simulating ion channel transport and collaborating on national CSIR research initiatives for novel antibiotics.',
-    image: drPremPalSinghImg
-  },
-  {
-    id: 'dm-gov-2',
-    name: 'Dr. Anish K. Verma',
-    degrees: 'PhD (JNCASR)',
-    affiliation: 'Principal Scientist, ICMR - National Institute of Virology',
-    domain: 'Virology & Public Health',
-    category: 'Government & Public Sector Experts',
-    badge: 'ICMR Govt. Scientist',
-    specialization: 'Epidemiological Genomics & Viral Vaccine Antigen Design',
-    expertisePills: ['ICMR NIV', 'Vaccine R&D', 'Public Health Policy', 'Pathogen Genomics'],
-    bio: 'Directs government-backed viral genomic surveillance programs and structural antigen design against emerging pathogens.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80'
-  },
-  {
-    id: 'dm-gov-3',
-    name: 'Dr. Ritu Sharma',
-    degrees: 'PhD (AIIMS New Delhi)',
-    affiliation: 'Senior Scientist, Department of Biotechnology (DBT), Govt. of India',
-    domain: 'Biotechnology & Policy',
-    category: 'Government & Public Sector Experts',
-    badge: 'DBT Govt. of India',
-    specialization: 'National Translational Biotech Grants & SOP Regulatory Advisory',
-    expertisePills: ['DBT Ministry', 'AIIMS New Delhi', 'Research Grants', 'Translational Bio'],
-    bio: 'Provides grant proposal reviewing, regulatory SOP alignment, and translational research mentoring for national research scholars.',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80'
+    badge: 'CSIR-IICB • DST INSPIRE Fellow',
+    specialization: 'Organic Synthesis, Medicinal Chemistry, Chemical Biology, In Silico Studies (Pharmacophore Hypothesis & Modeling, 2D & 3D QSAR, Molecular Docking, MD Simulation, Virtual Screening, Target Identification, ADMET Profiling, Lead Discovery & Optimization)',
+    expertisePills: ['DST INSPIRE Fellow', 'CSIR-IICB', 'Medicinal Chemistry', 'Organic Synthesis', 'Chemical Biology', 'In Silico Drug Design', 'Molecular Docking & MD', '2D & 3D QSAR', 'Lead Optimization', 'Gold Medalist (M.Pharm)'],
+    bio: 'B.Pharm and M.Pharm in Pharmaceutical Chemistry (Gold Medalist), currently pursuing PhD as a DST INSPIRE Fellow at CSIR-Indian Institute of Chemical Biology (CSIR-IICB) with 4 years of research experience across 3 handled projects. Specializes in in silico lead design followed by organic synthesis and biological evaluation of developed molecules to target disease-relevant receptors.\n\nMaster\'s Dissertation: In silico study including pharmacophore hypothesis model generation, 2D & 3D QSAR, molecular docking, virtual screening, target identification, and ADMET profiling of a congeneric series of benzimidazole-based derivatives for activity against gastric cancer, leading to EGFR-targeted lead optimization and chemical synthesis of benzimidazole derivatives.\n\nOngoing PhD Research: Development of heterocyclic glycoconjugated mTOR inhibitors, design and synthesis of non-cytotoxic compounds targeting the internal ribosome entry site (IRES) of HCV, heterocycle-fluoroquinolone conjugates and novel bacterial topoisomerase inhibitor (NBTI) synthesis to combat antimicrobial resistance (AMR), and targeting the G-quadruplex forming domain of SARS-CoV-2 RNA.',
+    image: biswadipAvatarImg
   }
 ];
 
@@ -682,7 +535,6 @@ export const FoundingMembersSection: React.FC<FoundingMembersSectionProps> = ({
                 .map((catSection) => {
                   const sectionMentors = DOMAIN_MENTORS_DATA.filter(m => m.category === catSection.category);
                   const IconComp = catSection.icon;
-                  if (sectionMentors.length === 0) return null;
 
                   return (
                     <div key={catSection.category} className="rounded-3xl border border-slate-200 bg-slate-50/30 p-6 sm:p-8 hover:bg-slate-50/70 transition-all duration-300">
@@ -713,13 +565,150 @@ export const FoundingMembersSection: React.FC<FoundingMembersSectionProps> = ({
                         </div>
                       </div>
 
-                      {/* Mentor Cards Grid for this category - Kept blank as requested */}
-                      <div className="flex flex-col items-center justify-center py-10 px-4 border border-dashed border-slate-200 rounded-2xl bg-white text-center shadow-2xs">
-                        <Users className="w-7 h-7 text-slate-400 mb-2 animate-pulse" />
-                        <span className="text-xs sm:text-sm font-semibold text-slate-500">
-                          Mentor profiles are currently being updated & verified. Please check back soon!
-                        </span>
-                      </div>
+                      {/* Mentor Cards Grid for this category */}
+                      {sectionMentors.length > 0 ? (
+                        <div>
+                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {sectionMentors.map((mentor) => (
+                              <div
+                                key={mentor.id}
+                                className="rounded-2xl border border-slate-200/90 bg-white hover:border-blue-400 hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group"
+                              >
+                                <div>
+                                  {/* Photo Container */}
+                                  <div className="relative aspect-4/3 sm:aspect-square w-full overflow-hidden bg-slate-100 border-b border-slate-100">
+                                    {mentor.badge && (
+                                      <div className="absolute top-2.5 left-2.5 z-10">
+                                        <span className="px-2 py-0.5 rounded-md bg-slate-900/85 backdrop-blur-xs text-white text-[10px] font-semibold tracking-wide inline-block shadow-xs border border-white/10">
+                                          {mentor.badge}
+                                        </span>
+                                      </div>
+                                    )}
+                                    <img
+                                      src={mentor.image}
+                                      alt={mentor.name}
+                                      referrerPolicy="no-referrer"
+                                      className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-103"
+                                    />
+                                  </div>
+
+                                  {/* Body Info */}
+                                  <div className="p-5 space-y-3">
+                                    <div>
+                                      <h5 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                                        {mentor.name}
+                                      </h5>
+                                      <div className="text-xs font-semibold text-blue-700 mt-0.5">
+                                        {mentor.degrees}
+                                      </div>
+                                      <div className="text-[11px] text-slate-500 font-medium mt-0.5">
+                                        {mentor.affiliation}
+                                      </div>
+                                    </div>
+
+                                    <div className="pt-2 border-t border-slate-100">
+                                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                                        Specialization
+                                      </span>
+                                      <p className="text-xs text-slate-700 font-medium leading-relaxed">
+                                        {mentor.specialization}
+                                      </p>
+                                    </div>
+
+                                    <div>
+                                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                                        Research Background
+                                      </span>
+                                      <div className={`text-xs text-slate-600 leading-relaxed whitespace-pre-line ${expandedMentors[mentor.id] ? '' : 'line-clamp-3'}`}>
+                                        {mentor.bio}
+                                      </div>
+                                      {mentor.bio.length > 140 && (
+                                        <button
+                                          type="button"
+                                          onClick={() => toggleMentorExpanded(mentor.id)}
+                                          className="text-[11px] font-semibold text-blue-600 hover:text-blue-800 transition-colors mt-1 inline-flex items-center gap-1 cursor-pointer"
+                                        >
+                                          {expandedMentors[mentor.id] ? 'Show less' : 'Read full background...'}
+                                        </button>
+                                      )}
+                                    </div>
+
+                                    <div className="flex flex-wrap gap-1.5 pt-1">
+                                      {(expandedMentors[mentor.id] ? mentor.expertisePills : mentor.expertisePills.slice(0, 5)).map((pill, idx) => (
+                                        <span
+                                          key={idx}
+                                          className="text-[10px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200/60"
+                                        >
+                                          {pill}
+                                        </span>
+                                      ))}
+                                      {!expandedMentors[mentor.id] && mentor.expertisePills.length > 5 && (
+                                        <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-blue-50 text-blue-600 border border-blue-100">
+                                          +{mentor.expertisePills.length - 5} more
+                                        </span>
+                                      )}
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div className="p-5 pt-0">
+                                  <div className="pt-3.5 border-t border-slate-100 flex items-center justify-between">
+                                    <span className="text-[11px] text-emerald-600 font-semibold flex items-center gap-1.5">
+                                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                                      Open for Mentorship
+                                    </span>
+                                    <button
+                                      type="button"
+                                      onClick={() => onOpenConsultation(mentor.name, 'Mentor Guidance')}
+                                      className="inline-flex items-center gap-1 text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors cursor-pointer"
+                                    >
+                                      <span>Connect</span>
+                                      <ArrowRight className="w-3.5 h-3.5" />
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+
+                          <div className="mt-4 p-3.5 rounded-xl bg-slate-100/80 border border-slate-200/70 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-600">
+                            <span className="flex items-center gap-2 font-medium">
+                              <Clock className="w-4 h-4 text-blue-600 shrink-0 animate-pulse" />
+                              More mentor onboarding is in process for this panel.
+                            </span>
+                            <a
+                              href="https://forms.gle/WKCS37wV8w4R1Ekj8"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-bold text-blue-600 hover:text-blue-800 transition-colors shrink-0 flex items-center gap-1"
+                            >
+                              <span>Apply as a Mentor</span>
+                              <ArrowRight className="w-3 h-3" />
+                            </a>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="flex flex-col items-center justify-center py-12 px-6 border border-dashed border-slate-300/90 rounded-2xl bg-white text-center shadow-2xs">
+                          <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-3.5 shadow-2xs">
+                            <Clock className="w-6 h-6 text-blue-600 animate-pulse" />
+                          </div>
+                          <h5 className="text-base sm:text-lg font-bold text-slate-900 mb-1.5">
+                            Mentor onboarding is in process
+                          </h5>
+                          <p className="text-xs sm:text-sm text-slate-500 max-w-md leading-relaxed">
+                            Mentor applications and institutional credential verifications are currently underway. Verified mentor profiles will be published here soon.
+                          </p>
+                          <a
+                            href="https://forms.gle/WKCS37wV8w4R1Ekj8"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-4 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900 text-white hover:bg-blue-600 transition-colors cursor-pointer shadow-xs"
+                          >
+                            <UserCheck className="w-3.5 h-3.5 text-blue-400" />
+                            <span>Apply to Join as a Mentor</span>
+                          </a>
+                        </div>
+                      )}
                     </div>
                   );
                 })}

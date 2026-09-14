@@ -78,7 +78,7 @@ export const Footer: React.FC<FooterProps> = ({
     {
       name: 'Instagram',
       icon: Instagram,
-      href: 'https://instagram.com/researcho.in',
+      href: 'https://www.instagram.com/researcho_by_iitians/',
       bgClass: 'bg-gradient-to-tr from-amber-400 via-rose-500 to-purple-600 text-white shadow-rose-950/40',
       hoverClass: 'hover:opacity-90 hover:scale-110 hover:shadow-lg hover:shadow-rose-500/30'
     },
@@ -92,14 +92,14 @@ export const Footer: React.FC<FooterProps> = ({
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      href: 'https://linkedin.com/company/researcho',
+      href: 'https://www.linkedin.com/company/researcho-by-iitians/',
       bgClass: 'bg-[#0A66C2] text-white shadow-blue-950/40',
       hoverClass: 'hover:bg-[#004182] hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30'
     },
     {
       name: 'Facebook',
       icon: Facebook,
-      href: 'https://facebook.com/researcho',
+      href: 'https://www.facebook.com/profile.php?id=61594579940562',
       bgClass: 'bg-[#1877F2] text-white shadow-blue-950/40',
       hoverClass: 'hover:bg-[#0d65d9] hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30'
     },
