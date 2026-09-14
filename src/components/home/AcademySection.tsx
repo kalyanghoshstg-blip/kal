@@ -151,7 +151,7 @@ export const AcademySection: React.FC<AcademySectionProps> = ({
                   </div>
                   <div className="bg-slate-800/80 border border-slate-700/60 p-2 rounded-lg">
                     <div className="text-slate-400 text-[10px]">Mode</div>
-                    <div className="text-white font-semibold text-xs mt-0.5">Live Online</div>
+                    <div className="text-white font-semibold text-xs mt-0.5">{featuredCourse.mode || 'Online Training'}</div>
                   </div>
                   <div className="bg-slate-800/80 border border-slate-700/60 p-2 rounded-lg">
                     <div className="text-slate-400 text-[10px]">Credential</div>
@@ -162,7 +162,7 @@ export const AcademySection: React.FC<AcademySectionProps> = ({
                 {/* Badges - Compact */}
                 <div className="flex flex-wrap gap-1.5 pt-0.5 text-[11px]">
                   <span className="flex items-center gap-1 text-slate-300 bg-slate-800/60 px-2 py-0.5 rounded-md border border-slate-700">
-                    <CheckCircle2 className="w-3 h-3 text-cyan-400" /> Live classes
+                    <CheckCircle2 className="w-3 h-3 text-cyan-400" /> Interactive sessions
                   </span>
                   <span className="flex items-center gap-1 text-slate-300 bg-slate-800/60 px-2 py-0.5 rounded-md border border-slate-700">
                     <CheckCircle2 className="w-3 h-3 text-cyan-400" /> Hands-on lab

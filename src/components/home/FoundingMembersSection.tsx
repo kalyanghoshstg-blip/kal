@@ -114,8 +114,8 @@ export const FOUNDING_MENTORS: MentorProfile[] = [
     institute: 'IIT Hyderabad (PhD) • Assistant Professor, Department of Pharmacy, Parul University',
     image: regAnanyaImg,
     badge: 'PMRF Fellow (Govt. of India) • IIT Hyderabad Scholar',
-    shortBio: 'Medicinal chemist and chemical biologist specializing in functional organic molecules, targeted protein degradation, and drug discovery. Recipient of PMRF from Govt. of India',
-    fullBio: `Dr. Dipayan Mondal completed his PhD in Chemistry from IIT Hyderabad as a Prime Minister's Research Fellow (PMRF). His research focuses on functional organic synthesis, flavin chemistry, supramolecular assemblies, and targeted protein degradation for innovative drug discovery. Author of 15+ peer-reviewed international publications and 2 patent applications.`,
+    shortBio: 'Specializing in organic chemistry, medicinal chemistry, drug discovery, supramolecular chemistry and chemical biology. Recipient of PMRF from Govt. of India',
+    fullBio: `Dr. Dipayan Mondal completed his PhD in Chemistry from IIT Hyderabad as a Prime Minister's Research Fellow (PMRF). His research focuses on organic chemistry, medicinal chemistry, drug discovery, supramolecular chemistry, flavin chemistry, and chemical biology. Author of 15+ peer-reviewed international publications and 2 patent applications.`,
     highlights: [
       'PhD in Chemistry from IIT Hyderabad',
       'Prime Minister\'s Research Fellowship (PMRF) by Govt. of India',
@@ -123,10 +123,10 @@ export const FOUNDING_MENTORS: MentorProfile[] = [
       'Contributor to 2 Patent Applications'
     ],
     keySpecializations: [
-      'Medicinal Chemistry & Rational Drug Discovery',
-      'Chemical Biology & Targeted Protein Degradation',
-      'Supramolecular Assemblies, Hydrogels & Bioimaging',
-      'Organic Synthesis, DFT Calculations & Spectroscopy'
+      'Organic Chemistry & Medicinal Chemistry',
+      'Drug Discovery & Chemical Biology',
+      'Supramolecular Chemistry & Assemblies',
+      'Flavin Chemistry & Spectroscopy'
     ],
     publicationsCount: '15+ Publications',
     fellowships: ['PMRF (Govt. of India)']

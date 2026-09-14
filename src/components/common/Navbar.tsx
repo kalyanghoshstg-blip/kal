@@ -37,10 +37,23 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [trainingDropdownOpen, setTrainingDropdownOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentY = window.scrollY;
+          // Apply hysteresis to prevent rapid fluctuation / jitter near threshold
+          setIsScrolled((prev) => {
+            if (!prev && currentY > 40) return true;
+            if (prev && currentY < 15) return false;
+            return prev;
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -55,18 +68,22 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header
       className={`sticky top-0 z-40 w-full transition-all duration-300 ease-in-out ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm py-2 border-b border-slate-200/80'
-          : 'bg-white py-3.5 border-b border-slate-100'
+          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/80 py-0.5'
+          : 'bg-white border-b border-slate-100 py-1.5 sm:py-2.5'
       }`}
     >
       <div className="w-full px-3 sm:px-5 lg:px-6">
-        <div className="flex items-center justify-between font-bold">
+        <div
+          className={`flex items-center justify-between font-bold transition-all duration-300 ease-in-out ${
+            isScrolled ? 'h-13 sm:h-15' : 'h-16 sm:h-20'
+          }`}
+        >
           {/* Logo */}
           <div
             onClick={() => handleNavClick('home')}
-            className="cursor-pointer transition-all duration-300 hover:opacity-95 flex items-center shrink-0 -ml-1 sm:-ml-2"
+            className="cursor-pointer hover:opacity-95 flex items-center shrink-0 -ml-1 sm:-ml-2 transition-transform duration-300 ease-in-out origin-left"
           >
-            <BrandLogo variant="compact" size={isScrolled ? 'sm' : 'lg'} />
+            <BrandLogo variant="compact" size={isScrolled ? 'sm' : 'md'} />
           </div>
 
           {/* Desktop Navigation Links */}
@@ -183,7 +200,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                       className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-blue-600 flex items-center justify-between cursor-pointer transition-colors"
                     >
                       <span className="font-medium text-xs">Featured: Molecular Docking</span>
-                      <span className="text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200/60 px-1.5 py-0.5 rounded font-semibold">Live</span>
                     </button>
                     <button
                       onClick={() => handleNavClick('training', 'advanced-courses')}

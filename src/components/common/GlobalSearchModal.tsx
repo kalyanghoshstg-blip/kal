@@ -175,11 +175,11 @@ const SEARCH_DATABASE: SearchResultItem[] = [
     id: 't1',
     title: 'Molecular Docking Masterclass (AutoDock Vina & PyMOL)',
     category: 'Training',
-    description: 'Hands-on live weekend masterclass covering ligand preparation, grid box optimization, docking visualization, and affinity analysis.',
+    description: 'Hands-on weekend masterclass covering ligand preparation, grid box optimization, docking visualization, and affinity analysis.',
     tags: ['docking course', 'autodock vina', 'pymol course', 'virtual screening workshop', 'hands-on training'],
     view: 'training',
     anchorId: 'featured-course',
-    badge: 'Live Workshop',
+    badge: 'Masterclass',
     icon: 'course',
   },
   {
