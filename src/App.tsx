@@ -9,6 +9,8 @@ import { Footer } from './components/common/Footer';
 import { ConsultationModal } from './components/common/ConsultationModal';
 import { GlobalSearchModal } from './components/common/GlobalSearchModal';
 import { FloatingActionWidget } from './components/common/FloatingActionWidget';
+import { LaunchAnnouncementBanner } from './components/common/LaunchAnnouncementBanner';
+import { FireworkBursts } from './components/common/FireworkBursts';
 import { HomePage } from './pages/HomePage';
 import { AboutView } from './components/views/AboutView';
 import { ContactView } from './components/views/ContactView';
@@ -102,6 +104,12 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-900 font-sans antialiased selection:bg-blue-600 selection:text-white">
+      {/* Celebration Firework Bursts (Runs for 5 seconds only) */}
+      <FireworkBursts />
+
+      {/* Website Launch Announcement Banner */}
+      <LaunchAnnouncementBanner />
+
       {/* Sticky Navbar */}
       <Navbar 
         currentView={currentView} 
