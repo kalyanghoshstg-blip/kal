@@ -124,7 +124,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 border-t border-white/10 text-slate-300 text-xs max-w-2xl mx-auto">
             <div className="flex items-center gap-2 justify-center">
               <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
-              <span>Mentored by IITians</span>
+              <span>Built by researchers and IITians</span>
             </div>
             <div className="flex items-center gap-2 justify-center">
               <Activity className="w-4 h-4 text-emerald-400 shrink-0" />

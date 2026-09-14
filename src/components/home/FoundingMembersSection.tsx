@@ -111,7 +111,7 @@ export const FOUNDING_MENTORS: MentorProfile[] = [
     name: 'Dr. Dipayan Mondal',
     degrees: 'B.Pharm., M.Pharm., PhD (IIT Hyderabad)',
     role: 'Co-Founder & Lead Scientific Advisor',
-    institute: 'PhD IIT Hyderabad',
+    institute: 'PhD IIT Hyderabad (Chemistry)',
     image: regAnanyaImg,
     badge: 'PMRF Fellow (Govt. of India) • IIT Hyderabad Scholar',
     shortBio: 'Specializing in organic chemistry, medicinal chemistry, drug discovery, supramolecular chemistry and chemical biology. Recipient of PMRF from Govt. of India',
