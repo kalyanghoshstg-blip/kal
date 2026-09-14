@@ -8,7 +8,7 @@ import { AcademySection } from '../components/home/AcademySection';
 import { WebinarsSection } from '../components/home/WebinarsSection';
 import { ProjectMentorshipSection } from '../components/home/ProjectMentorshipSection';
 import { WhyChooseUsSection } from '../components/home/WhyChooseUsSection';
-import { ResearchoFaqSection } from '../components/home/ResearchoFaqSection';
+
 import { FinalCTASection } from '../components/home/FinalCTASection';
 import { PageView } from '../types';
 
@@ -81,12 +81,6 @@ export const HomePage: React.FC<HomePageProps> = ({
       <WhyChooseUsSection 
         onNavigate={onNavigate} 
         onOpenConsultation={() => onOpenConsultation()} 
-      />
-
-      {/* 10.5 Official FAQ & Brand Foundation */}
-      <ResearchoFaqSection 
-        onNavigate={onNavigate}
-        onOpenConsultation={() => onOpenConsultation()}
       />
 
       {/* 11. Final CTA */}
