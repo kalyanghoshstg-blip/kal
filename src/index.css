@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* Sleek custom scrollbars */
 .custom-scrollbar::-webkit-scrollbar {
   height: 6px;
@@ -32,3 +38,4 @@
 .dark-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(148, 163, 184, 0.9);
 }
+

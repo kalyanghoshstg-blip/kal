@@ -25,7 +25,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     <div className={`flex items-center select-none ${className}`}>
       <img
         src={headerLogoImg}
-        alt="Researcho by IITians - One-Stop Research Solutions"
+        alt="ResearchO by IITians - One-Stop Research Solutions"
         className={`${sizeClasses[size]} w-auto object-contain transition-all duration-300 ease-in-out transform origin-left will-change-[height,transform] mix-blend-multiply bg-transparent`}
         referrerPolicy="no-referrer"
       />

@@ -22,7 +22,7 @@ export const ResearchoFaqSection: React.FC<ResearchoFaqSectionProps> = ({
             <span>Official Knowledge Base & Platform Guide</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 font-serif">
-            About Researcho by IITians
+            About ResearchO by IITians
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600">
             A comprehensive overview of our research-support, expert-guidance, and professional training solutions.
@@ -32,7 +32,7 @@ export const ResearchoFaqSection: React.FC<ResearchoFaqSectionProps> = ({
         {/* Dynamic Rich Text Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           
-          {/* Card 1: What is Researcho by IITians? */}
+          {/* Card 1: What is ResearchO by IITians? */}
           <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs hover:shadow-md transition-shadow duration-300">
             <div className="flex items-start gap-4">
               <div className="p-3 bg-blue-50 text-blue-600 rounded-xl shrink-0">
@@ -40,19 +40,19 @@ export const ResearchoFaqSection: React.FC<ResearchoFaqSectionProps> = ({
               </div>
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-slate-900 font-serif">
-                  What is Researcho by IITians?
+                  What is ResearchO by IITians?
                 </h3>
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                  <strong>Researcho by IITians</strong> is an independent, expert-led research-support and training platform founded by prestigious PMRF Fellows and IIT Hyderabad scholars. We bridge the gap between academic theories and cutting-edge industrial practices. 
+                  <strong>ResearchO by IITians</strong> is a research support, training and expert guidance platform connecting students, researchers, PhD scholars and professionals with experienced researchers, mentors and subject-matter experts. We bridge the gap between academic theories and cutting-edge industrial practices. 
                 </p>
                 <p className="text-xs sm:text-sm text-slate-500 italic">
-                  *Please note: Researcho by IITians is an independent training and support organization. We are not officially affiliated with, endorsed by, or representing any Indian Institute of Technology (IIT).
+                  *Please note: ResearchO by IITians is an independent training and support organization. We are not officially affiliated with, endorsed by, or representing any Indian Institute of Technology (IIT).
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Card 2: What services does Researcho provide? */}
+          {/* Card 2: What services does ResearchO provide? */}
           <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs hover:shadow-md transition-shadow duration-300">
             <div className="flex items-start gap-4">
               <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl shrink-0">
@@ -60,7 +60,7 @@ export const ResearchoFaqSection: React.FC<ResearchoFaqSectionProps> = ({
               </div>
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-slate-900 font-serif">
-                  What services does Researcho provide?
+                  What services does ResearchO provide?
                 </h3>
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                   We provide a holistic ecosystem of professional research-support services:
@@ -95,7 +95,7 @@ export const ResearchoFaqSection: React.FC<ResearchoFaqSectionProps> = ({
             </div>
           </div>
 
-          {/* Card 3: Who is Researcho for? */}
+          {/* Card 3: Who is ResearchO for? */}
           <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs hover:shadow-md transition-shadow duration-300">
             <div className="flex items-start gap-4">
               <div className="p-3 bg-purple-50 text-purple-600 rounded-xl shrink-0">
@@ -103,10 +103,10 @@ export const ResearchoFaqSection: React.FC<ResearchoFaqSectionProps> = ({
               </div>
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-slate-900 font-serif">
-                  Who is Researcho for?
+                  Who is ResearchO for?
                 </h3>
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                  Researcho is designed to meet the high standards of a diverse spectrum of researchers and scientific minds:
+                  ResearchO is designed to meet the high standards of a diverse spectrum of researchers and scientific minds:
                 </p>
                 <div className="flex flex-wrap gap-2 pt-1">
                   {['Students', 'Researchers', 'PhD Scholars', 'Faculty Members', 'Research Professionals', 'Industry Professionals'].map((tag) => (

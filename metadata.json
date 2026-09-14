@@ -1,6 +1,6 @@
 {
-  "name": "Researcho by IITians",
-  "description": "Research collaboration, scientific training, mentoring and professional research solutions across biotechnology, life sciences, chemistry, pharmacy, computational biology and drug discovery.",
+  "name": "ResearchO by IITians",
+  "description": "ResearchO by IITians provides research support, expert guidance, mentor-led training and customized research solutions for students, researchers, PhD scholars and professionals.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

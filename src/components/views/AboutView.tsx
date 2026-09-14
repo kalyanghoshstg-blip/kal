@@ -10,7 +10,10 @@ import {
   ArrowRight,
   BookOpen,
   Layers,
-  Award
+  Award,
+  Users,
+  Briefcase,
+  HelpCircle
 } from 'lucide-react';
 import { BrandLogo } from '../common/BrandLogo';
 import { PageView } from '../../types';
@@ -34,15 +37,169 @@ export const AboutView: React.FC<AboutViewProps> = ({
             <Sparkles className="w-3.5 h-3.5 text-blue-600" />
             Our Academic & Research Identity
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
-            About Researcho
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight font-serif">
+            About ResearchO by IITians
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            Researcho is a research and training platform focused on biotechnology, drug discovery, computational biology, chemistry, pharmacy and life sciences.
+            An independent research-support, mentor-led training, and customized research guidance platform serving the global scientific community.
           </p>
           <div className="mt-4 inline-block font-mono text-xs font-semibold text-blue-700 bg-blue-50 px-3.5 py-1 rounded-full border border-blue-200/60">
-            Learn. Research. Grow.
+            https://researcho-by-iitians.in/
           </div>
+        </div>
+
+        {/* Detailed Factual Foundations (The 6 SEO Brand Questions) */}
+        <div className="space-y-8">
+          
+          {/* Question 1 & 2: What is ResearchO by IITians & What does "by IITians" mean? */}
+          <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-2xs space-y-6">
+            <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
+              <div className="p-2.5 bg-blue-50 text-blue-600 rounded-lg shrink-0">
+                <HelpCircle className="w-5 h-5" />
+              </div>
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 font-serif">
+                What is ResearchO by IITians & What does "by IITians" mean?
+              </h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm sm:text-base text-slate-700 leading-relaxed">
+              <div className="space-y-3">
+                <p>
+                  <strong>ResearchO by IITians</strong> is a specialized, independent research support, training, and expert guidance platform. We connect students, researchers, PhD scholars, and professionals with experienced researchers, mentors, and subject-matter experts.
+                </p>
+                <p>
+                  Our primary mission is to democratize academic mentorship, providing access to advanced molecular simulations, computational drug discovery tools, biostatistics, and structural chemistry training that might otherwise be unavailable or difficult to master independently.
+                </p>
+              </div>
+              <div className="space-y-3 bg-slate-50 rounded-xl p-5 border border-slate-100 text-xs sm:text-sm text-slate-600">
+                <p className="font-semibold text-slate-900 uppercase tracking-wider text-xs">
+                  ⚠️ Factual Transparency Disclaimer
+                </p>
+                <p>
+                  The phrase <strong>"by IITians"</strong> represents our platform's founders and primary technical mentors, who are graduates, scholars, or PMRF fellows from prestigious Indian Institutes of Technology (specifically IIT Hyderabad).
+                </p>
+                <p>
+                  <strong>ResearchO by IITians is a completely independent organization.</strong> We are not officially affiliated with, endorsed by, sponsored by, or representing any Indian Institute of Technology (IIT) or government academic institution.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Question 3 & 4: Who is it for & What problems does it solve? */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-2xs space-y-4">
+              <div className="flex items-center gap-3 pb-3 border-b border-slate-100">
+                <div className="p-2 bg-purple-50 text-purple-600 rounded-lg shrink-0">
+                  <Users className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 font-serif">
+                  Who is ResearchO by IITians for?
+                </h3>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Our platform provides structured, high-integrity support across academic and professional boundaries, specifically catering to:
+              </p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-700 font-semibold">
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                  Students
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                  Researchers
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                  PhD Scholars
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                  Faculty Members
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                  Research Professionals
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                  Industry Professionals
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-2xs space-y-4">
+              <div className="flex items-center gap-3 pb-3 border-b border-slate-100">
+                <div className="p-2 bg-amber-50 text-amber-600 rounded-lg shrink-0">
+                  <Target className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 font-serif">
+                  What problems does it solve?
+                </h3>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Academic curriculum frequently focuses on abstract theories, leaving a massive skill gap in executing real research. ResearchO by IITians systematically solves:
+              </p>
+              <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                  <span><strong>Lack of Hands-on Technical Training:</strong> Most universities lack high-performance servers or direct coaching for advanced computational simulation pipelines.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                  <span><strong>Ineffective Academic Writing:</strong> Good data often gets rejected by high-impact peer-reviewed journals due to poor drafting structure and presentation.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Question 5 & 6: What services are provided & Who are the mentors? */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-2xs space-y-4">
+              <div className="flex items-center gap-3 pb-3 border-b border-slate-100">
+                <div className="p-2 bg-emerald-50 text-emerald-600 rounded-lg shrink-0">
+                  <FlaskConical className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 font-serif">
+                  What services are provided?
+                </h3>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-600">
+                We deliver a high-quality suite of custom academic services adhering to the highest standards of academic integrity:
+              </p>
+              <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <span><strong>Scientific Writing & Publication Support:</strong> Expert manuscript reviews, citation format alignments, and plag reports.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <span><strong>Advanced Scientific Training:</strong> Masterclasses covering GROMACS molecular dynamics, in-silico drug docking, and genomics.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <span><strong>Customized Solutions:</strong> Custom mathematical modeling, structure verification via 2D NMR, and computational biology tasks.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-2xs space-y-4">
+              <div className="flex items-center gap-3 pb-3 border-b border-slate-100">
+                <div className="p-2 bg-blue-50 text-blue-600 rounded-lg shrink-0">
+                  <GraduationCap className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 font-serif">
+                  Who are our mentors and experts?
+                </h3>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Our mentorship panel consists of verified academic researchers, prime PMRF scholars, and organic chemists with extensive track records in peer-reviewed journals.
+              </p>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Every mentor on our platform undergoes a rigorous credentials verification process. We explicitly map incoming student abstracts to subject-matter experts with matching publication records to guarantee the highest level of relevant, accurate coaching.
+              </p>
+            </div>
+          </div>
+
         </div>
 
         {/* Brand Display & Core Narrative */}
@@ -54,9 +211,6 @@ export const AboutView: React.FC<AboutViewProps> = ({
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
               Bridging the Critical Academic-to-Research Gap
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
-              Our primary goal is to systematically bridge the gap between:
-            </p>
             <div className="p-3.5 rounded-xl bg-blue-50 border border-blue-200/60 text-xs sm:text-sm font-medium text-slate-800 flex flex-wrap items-center gap-2">
               <span>Academic Knowledge</span>
               <span className="text-blue-500">→</span>
@@ -67,108 +221,15 @@ export const AboutView: React.FC<AboutViewProps> = ({
               <span className="text-emerald-700 font-semibold">Career Development</span>
             </div>
             <p className="text-xs sm:text-sm text-slate-600">
-              Founded and mentored by researchers from premier Indian Institutes of Technology (IITs), Researcho provides practical, reproducible, and rigorous scientific support for undergraduate students, postgraduates, doctoral scholars, faculty members, and research institutions.
+              Founded and mentored by researchers with roots in premier Indian Institutes of Technology (IITs), ResearchO by IITians provides practical, reproducible, and rigorous scientific support for undergraduate students, postgraduates, doctoral scholars, faculty members, and research institutions.
             </p>
-          </div>
-        </div>
-
-        {/* Mission, Vision, and Approach */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-2xl p-7 border border-slate-200 shadow-xs space-y-3">
-            <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
-              <Target className="w-5 h-5" />
-            </div>
-            <h3 className="text-lg font-bold text-slate-900">Our Mission</h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              To democratize high-level computational, analytical, and drug discovery research capabilities, equipping life science students and researchers with hands-on technical competence.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl p-7 border border-slate-200 shadow-xs space-y-3">
-            <div className="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
-              <Compass className="w-5 h-5" />
-            </div>
-            <h3 className="text-lg font-bold text-slate-900">Our Vision</h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              To become the world's most trusted one-stop research and training ecosystem for life sciences, connecting foundational discovery to global research careers.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl p-7 border border-slate-200 shadow-xs space-y-3">
-            <div className="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
-              <ShieldCheck className="w-5 h-5" />
-            </div>
-            <h3 className="text-lg font-bold text-slate-900">Our Approach</h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Evidence-informed, reproducible research workflows combining physics-based simulation algorithms, multi-omics pipelines, spectroscopic rigor, and ethical mentorship.
-            </p>
-          </div>
-        </div>
-
-        {/* Research Areas & Training Philosophy */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-xs space-y-4">
-            <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-              <FlaskConical className="w-5 h-5 text-blue-600" />
-              Core Research Focus Areas
-            </h3>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700">
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-                <span><strong>Computational Drug Discovery:</strong> Target identification, AutoDock docking, HTVS, ADMET & QSAR.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-                <span><strong>Molecular Dynamics:</strong> All-atom GROMACS trajectories, MM/PBSA free energy binding calculations.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-                <span><strong>Bioinformatics:</strong> RNA-seq differential expression, DESeq2 pipelines, proteomics & phylogenetics.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-                <span><strong>Analytical Chemistry:</strong> 1D/2D NMR (COSY/HSQC/HMBC), LC-MS, GC-MS and structure proof.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-                <span><strong>Scientific Writing:</strong> High-impact journal manuscript language editing and peer-review rebuttal support.</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-xs space-y-4">
-            <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-              <GraduationCap className="w-5 h-5 text-emerald-600" />
-              Our Training Philosophy
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              We reject passive, theory-only video lectures. Our educational model is built on active, project-driven learning:
-            </p>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700">
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Hands-on from Day 1:</strong> Students execute actual software runs on their own systems or cloud servers.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Real Scientific Datasets:</strong> Practicing on real PDB crystal structures, raw FASTQ reads, and NMR FID files.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Publication Standard:</strong> Learning to generate figures, tables, and scripts suitable for indexed journals.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Direct Faculty Interaction:</strong> Small batch sizes with dedicated doubt-clearing sessions.</span>
-              </li>
-            </ul>
           </div>
         </div>
 
         {/* CTA Banner */}
         <div className="text-center p-8 sm:p-10 rounded-2xl bg-slate-900 text-white border border-slate-800 shadow-xs">
           <h3 className="text-2xl font-bold text-white mb-2">
-            Collaborate With Researcho
+            Collaborate With ResearchO by IITians
           </h3>
           <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto mb-6">
             Get personalized research support or institutional workshop arrangements.
