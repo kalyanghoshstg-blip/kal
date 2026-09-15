@@ -43,7 +43,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] lg:leading-[58px] w-full max-w-4xl mx-auto text-center font-bold tracking-tight text-white px-2">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[43px] lg:leading-[58px] w-full max-w-4xl mx-auto text-center font-bold tracking-tight text-white px-2">
             One-Stop Research, Collaboration & Training Solutions for Life Sciences, Biotechnology, Chemistry, Pharmacy & Engineering
           </h1>
 
@@ -53,7 +53,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </p>
 
           {/* Core Philosophy Banner: LEARN → RESEARCH → CAREER */}
-          <div className="pt-1 flex justify-center">
+          <div className="pt-2 flex items-center justify-center">
             <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-1.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-xs">
               <span className="text-xs font-mono uppercase tracking-wider text-slate-400 pl-2">Philosophy:</span>
               
@@ -68,7 +68,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
               <button
                 onClick={() => onNavigate('services')}
-                className="px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-medium text-xs flex items-center gap-1.5 transition-colors cursor-pointer border border-slate-700"
+                className="px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-medium text-xs flex items-center gap-1.5 transition-colors cursor-pointer"
               >
                 <FlaskConical className="w-3.5 h-3.5 text-sky-300" />
                 RESEARCH
@@ -86,7 +86,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
               <button
                 onClick={() => onNavigate('career-guidance')}
-                className="px-3 py-1 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-medium text-xs flex items-center gap-1.5 transition-colors cursor-pointer"
+                className="px-3 py-1 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-medium text-xs flex items-center gap-1.5 transition-colors cursor-pointer border border-emerald-600"
               >
                 <GraduationCap className="w-3.5 h-3.5 text-emerald-200" />
                 CAREER

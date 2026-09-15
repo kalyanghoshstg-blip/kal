@@ -25,8 +25,30 @@ import { FoundingMembersSection } from './components/home/FoundingMembersSection
 import { CollaborationView } from './components/views/CollaborationView';
 import { PageView } from './types';
 
+const getInitialView = (): PageView => {
+  if (typeof window === 'undefined') return 'home';
+  const rawPath = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+  const validViews: PageView[] = [
+    'services',
+    'training',
+    'live-classes',
+    'webinars',
+    'mentors',
+    'career-guidance',
+    'project-mentorship',
+    'resources',
+    'collaboration',
+    'about',
+    'contact',
+  ];
+  if (validViews.includes(rawPath as PageView)) {
+    return rawPath as PageView;
+  }
+  return 'home';
+};
+
 export default function App() {
-  const [currentView, setCurrentView] = useState<PageView>('home');
+  const [currentView, setCurrentView] = useState<PageView>(() => getInitialView());
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [initialSearchQuery, setInitialSearchQuery] = useState('');
@@ -35,6 +57,15 @@ export default function App() {
     projectType?: string;
   }>({});
   const [selectedServiceId, setSelectedServiceId] = useState<string | undefined>();
+
+  // Sync browser back/forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      setCurrentView(getInitialView());
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   // Global Ctrl+K or Cmd+K keyboard shortcut listener for search
   useEffect(() => {
@@ -71,15 +102,28 @@ export default function App() {
       ? 'molecular-dynamics'
       : view;
 
+    let resolvedView: PageView = view;
     if (serviceIds.includes(targetService)) {
       setSelectedServiceId(targetService);
       setCurrentView('services');
+      resolvedView = 'services';
       anchorId = targetService;
     } else {
       if (anchorId && serviceIds.includes(anchorId)) {
         setSelectedServiceId(anchorId === 'protein-ligand-membrane-simulation' ? 'molecular-dynamics' : anchorId);
       }
       setCurrentView(view);
+      resolvedView = view;
+    }
+
+    // Update browser URL to match canonical page route
+    try {
+      const targetPath = resolvedView === 'home' ? '/' : `/${resolvedView}`;
+      if (window.location.pathname !== targetPath && window.history?.pushState) {
+        window.history.pushState({ view: resolvedView }, '', targetPath);
+      }
+    } catch {
+      // Ignore in non-standard history environments
     }
     
     if (anchorId) {
@@ -152,7 +196,7 @@ export default function App() {
           <div className="py-8 bg-slate-50 min-h-screen">
             <ResearchServicesSection 
               onNavigate={handleNavigate} 
-              onOpenConsultation={handleOpenConsultation} 
+              onOpenConsultation={handleOpenConsultation}
               initialServiceId={selectedServiceId}
             />
           </div>

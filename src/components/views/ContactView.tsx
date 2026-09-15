@@ -64,7 +64,7 @@ export const ContactView: React.FC = () => {
 
   return (
     <div className="bg-slate-50 min-h-screen py-12 sm:py-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">

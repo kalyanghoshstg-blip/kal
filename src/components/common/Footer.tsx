@@ -294,6 +294,14 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button
+                  onClick={() => onNavigate('about')}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
+                  About Researcho
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => onNavigate('collaboration')}
                   className="hover:text-blue-400 transition-colors text-left cursor-pointer"
                 >
@@ -310,18 +318,10 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('about')}
-                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
-                >
-                  About Researcho by IITians
-                </button>
-              </li>
-              <li>
-                <button
                   onClick={() => onNavigate('resources')}
                   className="hover:text-blue-400 transition-colors text-left cursor-pointer"
                 >
-                  Research Resources
+                  Scientific Resources
                 </button>
               </li>
             </ul>
