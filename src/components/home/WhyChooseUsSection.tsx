@@ -44,7 +44,7 @@ export const WhyChooseUsSection: React.FC<WhyChooseUsSectionProps> = ({
             Our Foundation & Principles
           </div>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
-            Why Researchers Choose Researcho
+            Why Researchers Choose Researcho by IITians
           </h2>
           <p className="mt-1.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
             Built by researchers for researchers, combining academic rigor from premier institutes with practical software training and technical research solutions.

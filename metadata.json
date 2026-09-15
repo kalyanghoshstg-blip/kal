@@ -1,6 +1,6 @@
 {
   "name": "Researcho by IITians",
-  "description": "Researcho by IITians provides research support, expert guidance, mentor-led training and customized research solutions for students, researchers, PhD scholars and professionals.",
+  "description": "Researcho by IITians is an independent research support, training and expert guidance platform providing customized research solutions, computational analysis, mentor-led masterclasses and academic project guidance.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

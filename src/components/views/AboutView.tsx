@@ -20,22 +20,22 @@ export const AboutView: React.FC<AboutViewProps> = ({
 }) => {
   return (
     <div className="bg-slate-50 min-h-screen py-12 sm:py-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Header Banner */}
         <div className="text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-3 border border-blue-200/60">
             <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-            Our Academic & Research Identity
+            Official Organization Information
           </div>
-          <h1 className="text-[43px] font-bold text-slate-900 tracking-tight font-serif leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-[43px] font-bold text-slate-900 tracking-tight font-serif leading-tight">
             About Researcho by IITians
           </h1>
-          <p className="mt-4 text-[17px] text-slate-600 leading-relaxed">
-            An independent research-support, mentor-led training, and customized research guidance platform serving the global scientific community.
+          <p className="mt-4 text-base sm:text-[17px] text-slate-700 font-medium leading-relaxed">
+            Researcho by IITians is an independent research support, training and expert guidance platform.
           </p>
-          <div className="mt-4 inline-block font-mono text-xs font-semibold text-blue-700 bg-blue-50 px-3.5 py-1 rounded-full border border-blue-200/60">
-            https://researcho-by-iitians.in/
+          <div className="mt-3 inline-block font-mono text-xs font-semibold text-blue-700 bg-blue-50 px-3.5 py-1 rounded-full border border-blue-200/60">
+            Official Website: https://researcho-by-iitians.in/
           </div>
         </div>
 
@@ -97,20 +97,21 @@ export const AboutView: React.FC<AboutViewProps> = ({
             <BrandLogo size="lg" />
           </div>
           <div className="lg:col-span-7 space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
-              Bridging the Critical Academic-to-Research Gap
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/70 text-blue-700 text-xs font-bold uppercase tracking-wider">
+              Bridging the Gap: Academia → Research → Industry
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
+              Inspiring Students to Explore Research Through Practical Learning & Expert-Led Training
             </h2>
             <div className="p-3.5 rounded-xl bg-blue-50 border border-blue-200/60 text-xs sm:text-sm font-medium text-slate-800 flex flex-wrap items-center gap-2">
-              <span>Academic Knowledge</span>
-              <span className="text-blue-500">→</span>
-              <span>Practical Research Skills</span>
-              <span className="text-blue-500">→</span>
-              <span>Scientific Research</span>
-              <span className="text-blue-500">→</span>
-              <span className="text-emerald-700 font-semibold">Career Development</span>
+              <span className="font-semibold text-slate-900">Academic Foundation</span>
+              <span className="text-blue-500 font-bold">→</span>
+              <span className="font-semibold text-blue-800">Advanced Research Skills</span>
+              <span className="text-blue-500 font-bold">→</span>
+              <span className="font-semibold text-emerald-700">Industry-Ready Translation</span>
             </div>
-            <p className="text-xs sm:text-sm text-slate-600">
-              Founded and mentored by researchers with roots in premier Indian Institutes of Technology (IITs), Researcho by IITians provides practical, reproducible, and rigorous scientific support for undergraduate students, postgraduates, doctoral scholars, faculty members, and research institutions.
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Founded and mentored by researchers with roots in premier Indian Institutes of Technology (IITs), Researcho by IITians is dedicated to bridging the gap between academic study, cutting-edge research, and real-world industry applications. Through hands-on practical learning, computational mastery, and expert-led training, we empower students and early-career scientists to turn theoretical concepts into impactful scientific outcomes.
             </p>
           </div>
         </div>
