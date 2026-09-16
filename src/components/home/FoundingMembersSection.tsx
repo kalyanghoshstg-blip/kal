@@ -39,6 +39,8 @@ import drSubhashisMImg from '../../assets/images/regenerated_image_1787810299659
 import drPremPalSinghImg from '../../assets/images/regenerated_image_1787814909685.png';
 import nishantRegImage from '../../assets/images/nishant_ranjan_avatar_1789306713313.jpg';
 import biswadipAvatarImg from '../../assets/images/regenerated_image_1789354049254.png';
+import pritamAvatarImg from '../../assets/images/regenerated_image_1789543343532.png';
+import abhijitAvatarImg from '../../assets/images/regenerated_image_1789544504279.png';
 import { PageView } from '../../types';
 
 interface FoundingMembersSectionProps {
@@ -187,6 +189,54 @@ export const DOMAIN_MENTORS_DATA: DomainMentor[] = [
     expertisePills: ['DST INSPIRE Fellow', 'CSIR-IICB', 'Medicinal Chemistry', 'Organic Synthesis', 'Chemical Biology', 'In Silico Drug Design', 'Molecular Docking & MD', '2D & 3D QSAR', 'Lead Optimization', 'Gold Medalist (M.Pharm)'],
     bio: 'B.Pharm and M.Pharm in Pharmaceutical Chemistry (Gold Medalist), currently pursuing PhD as a DST INSPIRE Fellow at CSIR-Indian Institute of Chemical Biology (CSIR-IICB) with 4 years of research experience across 3 handled projects. Specializes in in silico lead design followed by organic synthesis and biological evaluation of developed molecules to target disease-relevant receptors.\n\nMaster\'s Dissertation: In silico study including pharmacophore hypothesis model generation, 2D & 3D QSAR, molecular docking, virtual screening, target identification, and ADMET profiling of a congeneric series of benzimidazole-based derivatives for activity against gastric cancer, leading to EGFR-targeted lead optimization and chemical synthesis of benzimidazole derivatives.\n\nOngoing PhD Research: Development of heterocyclic glycoconjugated mTOR inhibitors, design and synthesis of non-cytotoxic compounds targeting the internal ribosome entry site (IRES) of HCV, heterocycle-fluoroquinolone conjugates and novel bacterial topoisomerase inhibitor (NBTI) synthesis to combat antimicrobial resistance (AMR), and targeting the G-quadruplex forming domain of SARS-CoV-2 RNA.',
     image: biswadipAvatarImg
+  },
+  {
+    id: 'dm-nat-pritam',
+    name: 'Dr. Pritam Maity',
+    degrees: 'ANRF National Post-Doctoral Fellow (ANRF N-PDF) • PhD',
+    affiliation: 'IISER Kolkata',
+    domain: 'Medicinal & Organic Chemistry',
+    category: 'National Mentors',
+    badge: 'IISER Kolkata • ANRF N-PDF',
+    specialization: 'Organic Synthesis, Drug Design, Fluorophore Development, Cell Culture, Biological Evaluation of Drug-like Molecules',
+    expertisePills: [
+      'ANRF N-PDF',
+      'IISER Kolkata',
+      'Medicinal Chemistry',
+      'Organic Synthesis',
+      'Drug Design',
+      'Fluorophore Development',
+      'Cell Culture',
+      'Biological Evaluation',
+      '6+ Yrs Research'
+    ],
+    bio: 'ANRF National Post-Doctoral Fellow (ANRF N-PDF) at IISER Kolkata with 6 years of advanced scientific research experience in Medicinal Chemistry. Specializes in the design, synthesis, and biological application of fluorophores and drug-like molecules, spanning computer-aided and rational drug design, complex organic synthesis, cell culture assays, and biological evaluation of novel therapeutic leads.',
+    image: pritamAvatarImg
+  },
+  // 2. R&D & Industry Specialists (Verified)
+  {
+    id: 'dm-ind-abhijit',
+    name: 'Mr. Abhijit Sasmal',
+    degrees: 'Masters in Pharmacology • Specialist Regulatory Medical Writer',
+    affiliation: 'Merck KGaA (Global Pharmaceutical R&D)',
+    domain: 'Pharmaceutics & Drug Delivery',
+    category: 'R&D & Industry Specialists',
+    badge: 'Merck KGaA • Regulatory R&D',
+    specialization: 'Investigator\'s Brochure (IB), Protocol Design, Clinical Study Reports (CSR), Development Safety Update Reports (DSUR), Regulatory Document Lifecycle Management & Quality Control',
+    expertisePills: [
+      'Merck KGaA',
+      'Regulatory Medical Writing',
+      'Clinical Research & R&D',
+      'Investigator Brochure (IB)',
+      'Protocol Design',
+      'Clinical Study Report (CSR)',
+      'Pharmacovigilance & Safety',
+      'Oncology Document Lifecycle',
+      '15+ Drug Projects',
+      '9 Publications'
+    ],
+    bio: 'Specialist Medical Writer in a global pharmaceutical R&D organization (Merck KGaA) with close to 4 years of hands-on experience in the pharmaceutical industry. Leads and supports the end-to-end development and lifecycle management of regulatory and safety documents, including Investigator\'s Brochures (IB), Development Safety Update Reports (DSUR), and comprehensive safety assessment documents.\n\nExperience spans scientific literature review, synthesis of clinical, nonclinical, pharmacokinetic, and safety information, document quality control, and cross-functional collaboration with global clinical, regulatory, and patient safety teams across more than 15 drug projects with 9 research publications. Mentors pharmacy and life-science students transitioning into pharma R&D, regulatory writing, clinical research, and pharmacovigilance.',
+    image: abhijitAvatarImg
   }
 ];
 
