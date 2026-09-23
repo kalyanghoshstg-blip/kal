@@ -27,8 +27,8 @@ interface VisitLogEntry {
   referrer?: string;
 }
 
-const BASELINE_TOTAL_VISITS = 0;
-const BASELINE_UNIQUE_VISITORS = 0;
+const BASELINE_TOTAL_VISITS = 1500;
+const BASELINE_UNIQUE_VISITORS = 1500;
 const STORAGE_TOTAL_KEY = 'researcho_total_views_record_v5';
 const STORAGE_UNIQUE_KEY = 'researcho_unique_views_record_v5';
 const VISITOR_ID_KEY = 'researcho_device_uuid_v5';
@@ -43,10 +43,10 @@ export const VisitorCounter: React.FC<VisitorCounterProps> = ({
       const saved = localStorage.getItem(STORAGE_TOTAL_KEY);
       if (saved) {
         const val = parseInt(saved, 10);
-        if (!isNaN(val) && val >= 0) return val;
+        if (!isNaN(val)) return Math.max(val, BASELINE_TOTAL_VISITS);
       }
     }
-    return 0;
+    return BASELINE_TOTAL_VISITS;
   });
 
   const [uniqueVisitors, setUniqueVisitors] = useState<number>(() => {
@@ -54,10 +54,10 @@ export const VisitorCounter: React.FC<VisitorCounterProps> = ({
       const saved = localStorage.getItem(STORAGE_UNIQUE_KEY);
       if (saved) {
         const val = parseInt(saved, 10);
-        if (!isNaN(val) && val >= 0) return val;
+        if (!isNaN(val)) return Math.max(val, BASELINE_UNIQUE_VISITORS);
       }
     }
-    return 0;
+    return BASELINE_UNIQUE_VISITORS;
   });
 
   const [recentLogs, setRecentLogs] = useState<VisitLogEntry[]>(() => {
@@ -101,14 +101,16 @@ export const VisitorCounter: React.FC<VisitorCounterProps> = ({
 
     // Optimistically update local numbers immediately so user sees immediate feedback
     setTotalVisits((prev) => {
-      const next = prev + 1;
+      const current = Math.max(prev, BASELINE_TOTAL_VISITS);
+      const next = current + 1;
       if (typeof window !== 'undefined') localStorage.setItem(STORAGE_TOTAL_KEY, String(next));
       return next;
     });
 
     if (isNewDevice) {
       setUniqueVisitors((prev) => {
-        const next = prev + 1;
+        const current = Math.max(prev, BASELINE_UNIQUE_VISITORS);
+        const next = current + 1;
         if (typeof window !== 'undefined') localStorage.setItem(STORAGE_UNIQUE_KEY, String(next));
         return next;
       });
@@ -161,29 +163,6 @@ export const VisitorCounter: React.FC<VisitorCounterProps> = ({
     }
   }, []);
 
-  const resetCounterToZero = async () => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem(STORAGE_TOTAL_KEY, '0');
-      localStorage.setItem(STORAGE_UNIQUE_KEY, '0');
-      localStorage.removeItem(RECENT_LOGS_KEY);
-    }
-    setTotalVisits(0);
-    setUniqueVisitors(0);
-    setRecentLogs([]);
-
-    try {
-      const counterRef = doc(db, 'analytics', 'global');
-      await setDoc(counterRef, {
-        visits: 0,
-        uniqueVisitors: 0,
-        lastResetAt: new Date().toISOString(),
-        lastVisitedAt: new Date().toISOString()
-      });
-    } catch (err) {
-      console.warn('Firestore reset warning:', err);
-    }
-  };
-
   useEffect(() => {
     // Record current page visit on initial mount
     recordVisit(false);
@@ -197,16 +176,37 @@ export const VisitorCounter: React.FC<VisitorCounterProps> = ({
           const data = snap.data();
           if (typeof data?.visits === 'number') {
             const rawVisits = data.visits;
-            // Ignore legacy 40k+ count if not yet sanitized
-            const finalVisits = rawVisits > 10000 ? 1 : rawVisits;
-            setTotalVisits(finalVisits);
-            if (typeof window !== 'undefined') localStorage.setItem(STORAGE_TOTAL_KEY, String(finalVisits));
+            // Always continue counting from 1500+ without any resets or caps
+            const calculatedVisits = rawVisits < BASELINE_TOTAL_VISITS 
+              ? BASELINE_TOTAL_VISITS + rawVisits 
+              : rawVisits;
+
+            setTotalVisits((prev) => {
+              const finalVisits = Math.max(prev, calculatedVisits);
+              if (typeof window !== 'undefined') localStorage.setItem(STORAGE_TOTAL_KEY, String(finalVisits));
+              return finalVisits;
+            });
+
+            // Sync baseline back into Firestore if below 1500 so cloud also never resets
+            if (rawVisits < BASELINE_TOTAL_VISITS) {
+              setDoc(counterRef, { visits: BASELINE_TOTAL_VISITS + rawVisits }, { merge: true }).catch(() => {});
+            }
           }
           if (typeof data?.uniqueVisitors === 'number') {
             const rawUnique = data.uniqueVisitors;
-            const finalUnique = rawUnique > 10000 ? 1 : rawUnique;
-            setUniqueVisitors(finalUnique);
-            if (typeof window !== 'undefined') localStorage.setItem(STORAGE_UNIQUE_KEY, String(finalUnique));
+            const calculatedUnique = rawUnique < BASELINE_UNIQUE_VISITORS 
+              ? BASELINE_UNIQUE_VISITORS + rawUnique 
+              : rawUnique;
+
+            setUniqueVisitors((prev) => {
+              const finalUnique = Math.max(prev, calculatedUnique);
+              if (typeof window !== 'undefined') localStorage.setItem(STORAGE_UNIQUE_KEY, String(finalUnique));
+              return finalUnique;
+            });
+
+            if (rawUnique < BASELINE_UNIQUE_VISITORS) {
+              setDoc(counterRef, { uniqueVisitors: BASELINE_UNIQUE_VISITORS + rawUnique }, { merge: true }).catch(() => {});
+            }
           }
           setIsLiveConnected(true);
         }
@@ -304,92 +304,32 @@ export const VisitorCounter: React.FC<VisitorCounterProps> = ({
               </div>
 
               {/* Stats Cards */}
-              <div className="grid grid-cols-2 gap-2.5">
-                <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/60">
-                  <div className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 flex items-center gap-1">
-                    <Eye className="w-3 h-3 text-blue-400" />
-                    <span>Total Visits</span>
-                  </div>
-                  <div className="text-xl font-mono font-bold text-white mt-1">
-                    {totalVisits.toLocaleString('en-US')}
-                  </div>
-                  <div className="text-[9px] text-emerald-400 font-medium mt-0.5 flex items-center gap-1">
-                    <span className="w-1 h-1 rounded-full bg-emerald-400" />
-                    <span>Recorded in Cloud</span>
-                  </div>
+              <div className="p-4 rounded-xl bg-slate-800/80 border border-slate-700/60">
+                <div className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 flex items-center gap-1.5">
+                  <Eye className="w-3.5 h-3.5 text-blue-400" />
+                  <span>Total Visits</span>
                 </div>
-
-                <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/60">
-                  <div className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 flex items-center gap-1">
-                    <Users className="w-3 h-3 text-cyan-400" />
-                    <span>Unique Visitors</span>
-                  </div>
-                  <div className="text-xl font-mono font-bold text-cyan-300 mt-1">
-                    {uniqueVisitors.toLocaleString('en-US')}
-                  </div>
-                  <div className="text-[9px] text-slate-400 mt-0.5">
-                    Distinct browser devices
-                  </div>
+                <div className="text-2xl font-mono font-bold text-white mt-1.5">
+                  {totalVisits.toLocaleString('en-US')}
                 </div>
-              </div>
-
-              {/* Real-time Visit Activity Feed */}
-              <div>
-                <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
-                  <div className="flex items-center gap-1">
-                    <Clock className="w-3 h-3 text-amber-400" />
-                    <span>Live Visit Log (Real-Time)</span>
-                  </div>
-                  <span className="text-[10px] text-slate-400 normal-case">Last sync: {lastRecordedAt}</span>
-                </div>
-                <div className="bg-slate-950 rounded-xl border border-slate-800/80 p-2 max-h-40 overflow-y-auto space-y-1.5 font-mono text-[10px]">
-                  {recentLogs.map((log, index) => (
-                    <div 
-                      key={log.id || index}
-                      className="flex items-center justify-between p-1.5 rounded bg-slate-900 border border-slate-800 text-slate-300"
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className="text-blue-400 font-bold">{log.timestamp}</span>
-                        <span className="text-slate-400">{log.visitorId}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        {log.isNewUnique ? (
-                          <span className="px-1.5 py-0.2 rounded bg-cyan-950 text-cyan-400 border border-cyan-800 text-[9px] font-sans font-semibold">
-                            New Device
-                          </span>
-                        ) : (
-                          <span className="px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 text-[9px] font-sans">
-                            Returning
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  ))}
+                <div className="text-[10px] text-emerald-400 font-medium mt-1 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Recorded in Cloud & Synchronized</span>
                 </div>
               </div>
 
               {/* Actions */}
-              <div className="pt-2 border-t border-slate-800 flex items-center justify-between gap-2 flex-wrap">
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => recordVisit(true)}
-                    className="px-2.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
-                  >
-                    <RefreshCw className="w-3 h-3" />
-                    <span>+1 Test Visit</span>
-                  </button>
-                  <button
-                    onClick={resetCounterToZero}
-                    className="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-red-950/80 hover:text-red-300 text-slate-300 text-xs font-medium border border-slate-700 hover:border-red-800/80 transition-colors cursor-pointer"
-                    title="Reset total visitors count to 0 in database"
-                  >
-                    <span>Reset to 0</span>
-                  </button>
-                </div>
-                <div className="flex items-center gap-1 text-[10px] text-slate-400">
+              <div className="pt-2 border-t border-slate-800 flex items-center justify-between gap-2">
+                <div className="flex items-center gap-1.5 text-[10px] text-slate-400">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                   <span>Auto-saved to Firestore</span>
                 </div>
+                <button
+                  onClick={() => setShowStatsModal(false)}
+                  className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium transition-colors cursor-pointer"
+                >
+                  Close
+                </button>
               </div>
             </div>
           </div>
